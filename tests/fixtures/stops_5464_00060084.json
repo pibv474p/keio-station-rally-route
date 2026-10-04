@@ -1,0 +1,76 @@
+{
+ "meta": {
+  "kind": "stops",
+  "stationRef": "5464",
+  "direction": "up",
+  "operation": {
+   "time": "2026-10-04T05:43:00+09:00",
+   "id": "00060084",
+   "train_no": "6300",
+   "type": "各駅停車",
+   "color": "#7f7f7f",
+   "is_departure": true,
+   "destinations": [
+    {
+     "name": "高幡不動",
+     "legend": "高"
+    }
+   ],
+   "platform": "２",
+   "remarks": {}
+  },
+  "url": "https://transfer-train.navitime.biz/api/keio/stops/5464/6?operation_id=00060084&datetime=2026-10-04T05%3A43%3A00%2B09%3A00&lang=ja&direction=0",
+  "fetchedAt": "2026-10-04T05:12:37.486Z"
+ },
+ "body": {
+  "station": {
+   "id": "5464",
+   "name": "多摩動物公園",
+   "ruby": "たまどうぶつこうえん",
+   "english_name": "Tama-dōbutsukōen",
+   "numberings": [
+    {
+     "symbol": "KO47",
+     "color": "#ffffff",
+     "background_color": "#d5007f"
+    }
+   ]
+  },
+  "stops": [
+   {
+    "id": "5464",
+    "name": "多摩動物公園",
+    "numberings": [
+     {
+      "symbol": "KO47",
+      "color": "#ffffff",
+      "background_color": "#d5007f"
+     }
+    ],
+    "advancing_line_id": "6",
+    "departure_time": "2026-10-04T05:43:00+09:00",
+    "train_no": "6300",
+    "train_short_name": "各駅停車",
+    "is_exist_around_bus_stops": true
+   },
+   {},
+   {
+    "id": "2624",
+    "name": "高幡不動",
+    "numberings": [
+     {
+      "symbol": "KO29",
+      "color": "#ffffff",
+      "background_color": "#d5007f"
+     }
+    ],
+    "advancing_line_id": "6",
+    "is_transit_station": true,
+    "arrive_time": "2026-10-04T05:47:00+09:00",
+    "train_no": "6300",
+    "train_short_name": "各駅停車",
+    "is_exist_around_bus_stops": true
+   }
+  ]
+ }
+}

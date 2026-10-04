@@ -1,0 +1,149 @@
+{
+ "meta": {
+  "kind": "stops",
+  "stationRef": "4254",
+  "lineId": "1",
+  "direction": "down",
+  "operation": {
+   "time": "2026-12-12T10:15:00+09:00",
+   "id": "80020216",
+   "train_no": "7731",
+   "type": "京王ライナー",
+   "color": "#ffffff",
+   "background_color": "#0a458e",
+   "is_departure": true,
+   "destinations": [
+    {
+     "name": "橋本",
+     "legend": "橋"
+    }
+   ],
+   "platform": "２",
+   "remarks": {}
+  },
+  "url": "https://transfer-train.navitime.biz/api/keio/stops/4254/1?operation_id=80020216&datetime=2026-12-12T10%3A15%3A00%2B09%3A00&lang=ja&direction=1",
+  "fetchedAt": "2026-10-04T12:37:10.514Z"
+ },
+ "body": {
+  "station": {
+   "id": "4254",
+   "name": "新宿",
+   "ruby": "しんじゅく",
+   "english_name": "Shinjuku",
+   "numberings": [
+    {
+     "symbol": "KO01",
+     "color": "#ffffff",
+     "background_color": "#d5007f"
+    }
+   ]
+  },
+  "stops": [
+   {
+    "id": "4254",
+    "name": "新宿",
+    "numberings": [
+     {
+      "symbol": "KO01",
+      "color": "#ffffff",
+      "background_color": "#d5007f"
+     }
+    ],
+    "advancing_line_id": "1",
+    "departure_time": "2026-12-12T10:15:00+09:00",
+    "train_no": "7731",
+    "train_short_name": "有料列車",
+    "is_exist_around_bus_stops": true
+   },
+   {},
+   {
+    "id": "8602",
+    "name": "明大前",
+    "numberings": [
+     {
+      "symbol": "KO06",
+      "color": "#ffffff",
+      "background_color": "#d5007f"
+     }
+    ],
+    "advancing_line_id": "1",
+    "arrive_time": "2026-12-12T10:22:00+09:00",
+    "departure_time": "2026-12-12T10:23:00+09:00",
+    "train_no": "7731",
+    "train_short_name": "有料列車"
+   },
+   {},
+   {
+    "id": "1708",
+    "name": "京王永山",
+    "numberings": [
+     {
+      "symbol": "KO40",
+      "color": "#ffffff",
+      "background_color": "#d5007f"
+     }
+    ],
+    "advancing_line_id": "3",
+    "arrive_time": "2026-12-12T10:44:00+09:00",
+    "departure_time": "2026-12-12T10:45:00+09:00",
+    "train_no": "7731K",
+    "train_short_name": "ライナー",
+    "is_exist_around_bus_stops": true
+   },
+   {},
+   {
+    "id": "1709",
+    "name": "京王多摩センター",
+    "numberings": [
+     {
+      "symbol": "KO41",
+      "color": "#ffffff",
+      "background_color": "#d5007f"
+     }
+    ],
+    "advancing_line_id": "3",
+    "is_transit_station": true,
+    "arrive_time": "2026-12-12T10:47:00+09:00",
+    "departure_time": "2026-12-12T10:47:00+09:00",
+    "train_no": "7731K",
+    "train_short_name": "ライナー",
+    "is_exist_around_bus_stops": true
+   },
+   {},
+   {
+    "id": "7130",
+    "name": "南大沢",
+    "numberings": [
+     {
+      "symbol": "KO43",
+      "color": "#ffffff",
+      "background_color": "#d5007f"
+     }
+    ],
+    "advancing_line_id": "3",
+    "arrive_time": "2026-12-12T10:51:00+09:00",
+    "departure_time": "2026-12-12T10:51:00+09:00",
+    "train_no": "7731K",
+    "train_short_name": "ライナー",
+    "is_exist_around_bus_stops": true
+   },
+   {},
+   {
+    "id": "1774",
+    "name": "橋本",
+    "numberings": [
+     {
+      "symbol": "KO45",
+      "color": "#ffffff",
+      "background_color": "#d5007f"
+     }
+    ],
+    "advancing_line_id": "3",
+    "arrive_time": "2026-12-12T10:55:00+09:00",
+    "train_no": "7731K",
+    "train_short_name": "ライナー",
+    "is_exist_around_bus_stops": true
+   }
+  ]
+ }
+}

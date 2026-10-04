@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "timetable.v1.json",
+  "title": "Normalized train timetable (v1)",
+  "type": "object",
+  "required": ["schemaVersion", "line", "service", "stations", "trains", "sources"],
+  "additionalProperties": false,
+  "definitions": {
+    "refs": { "type": "object", "additionalProperties": { "type": "string" } },
+    "seconds": { "type": "integer", "minimum": 0, "maximum": 172800 },
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+  },
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "line": {
+      "type": "object",
+      "required": ["id", "name", "operator"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "operator": { "type": "string" }
+      }
+    },
+    "service": {
+      "type": "object",
+      "required": ["id"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "validFrom": { "$ref": "#/definitions/date" },
+        "sampleDate": { "$ref": "#/definitions/date" }
+      }
+    },
+    "stations": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "km"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "km": { "type": "number", "minimum": 0 },
+          "kind": { "enum": [1, 2, 3] },
+          "refs": { "$ref": "#/definitions/refs" }
+        }
+      }
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "stations"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "refs": { "$ref": "#/definitions/refs" },
+          "stations": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["stationId", "km"],
+              "additionalProperties": false,
+              "properties": {
+                "stationId": { "type": "string" },
+                "km": { "type": "number", "minimum": 0 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "trains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "direction", "stops"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "direction": { "enum": ["down", "up"] },
+          "number": { "type": "string" },
+          "name": { "type": "string" },
+          "trainType": { "type": "string" },
+          "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+          "destination": { "type": "string" },
+          "reservedSeat": { "type": "boolean" },
+          "next": { "type": "string" },
+          "prev": { "type": "string" },
+          "refs": { "$ref": "#/definitions/refs" },
+          "stops": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["stationId"],
+              "additionalProperties": false,
+              "properties": {
+                "stationId": { "type": "string" },
+                "arr": { "$ref": "#/definitions/seconds" },
+                "dep": { "$ref": "#/definitions/seconds" },
+                "track": { "type": "string" },
+                "pass": { "type": "boolean" },
+                "estimated": { "type": "array", "items": { "enum": ["arr", "dep"] } }
+              }
+            }
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "additionalProperties": false,
+        "properties": {
+          "type": { "type": "string" },
+          "url": { "type": "string" },
+          "fetchedAt": { "type": "string" },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

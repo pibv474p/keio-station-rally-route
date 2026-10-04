@@ -1,0 +1,11 @@
+# 取得・生成したデータ（deno task fetch / build で再生成できる）
+raw/
+data/
+out/
+
+# エディタ・OS
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+.DS_Store

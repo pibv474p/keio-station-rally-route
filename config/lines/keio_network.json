@@ -1,0 +1,597 @@
+{
+  "id": "keio_network",
+  "name": "京王線（新線・相模原線・高尾線・競馬場線・動物園線を含む）",
+  "operator": "京王電鉄",
+  "stations": [
+    {
+      "id": "shinjuku",
+      "name": "新宿",
+      "km": 0,
+      "kind": 3,
+      "refs": {
+        "navitime": "4254"
+      }
+    },
+    {
+      "id": "hatsudai",
+      "name": "初台",
+      "km": 1.7,
+      "refs": {
+        "navitime": "3605"
+      }
+    },
+    {
+      "id": "hatagaya",
+      "name": "幡ヶ谷",
+      "km": 2.7,
+      "refs": {
+        "navitime": "7501"
+      }
+    },
+    {
+      "id": "sasazuka",
+      "name": "笹塚",
+      "km": 3.6,
+      "kind": 2,
+      "refs": {
+        "navitime": "2919"
+      }
+    },
+    {
+      "id": "daitabashi",
+      "name": "代田橋",
+      "km": 4.4,
+      "refs": {
+        "navitime": "5510"
+      }
+    },
+    {
+      "id": "meidaimae",
+      "name": "明大前",
+      "km": 5.2,
+      "kind": 2,
+      "refs": {
+        "navitime": "8602"
+      }
+    },
+    {
+      "id": "shimotakaido",
+      "name": "下高井戸",
+      "km": 6.1,
+      "refs": {
+        "navitime": "922"
+      }
+    },
+    {
+      "id": "sakurajosui",
+      "name": "桜上水",
+      "km": 7,
+      "kind": 2,
+      "refs": {
+        "navitime": "2890"
+      }
+    },
+    {
+      "id": "kamikitazawa",
+      "name": "上北沢",
+      "km": 7.8,
+      "refs": {
+        "navitime": "4052"
+      }
+    },
+    {
+      "id": "hachimanyama",
+      "name": "八幡山",
+      "km": 8.4,
+      "refs": {
+        "navitime": "7560"
+      }
+    },
+    {
+      "id": "rokakoen",
+      "name": "芦花公園",
+      "km": 9.1,
+      "refs": {
+        "navitime": "223"
+      }
+    },
+    {
+      "id": "chitosekarasuyama",
+      "name": "千歳烏山",
+      "km": 9.9,
+      "kind": 2,
+      "refs": {
+        "navitime": "5136"
+      }
+    },
+    {
+      "id": "sengawa",
+      "name": "仙川",
+      "km": 11.5,
+      "refs": {
+        "navitime": "5124"
+      }
+    },
+    {
+      "id": "tsutsujigaoka",
+      "name": "つつじヶ丘",
+      "km": 12.5,
+      "kind": 2,
+      "refs": {
+        "navitime": "81"
+      }
+    },
+    {
+      "id": "shibasaki",
+      "name": "柴崎",
+      "km": 13.3,
+      "refs": {
+        "navitime": "3406"
+      }
+    },
+    {
+      "id": "kokuryo",
+      "name": "国領",
+      "km": 14.2,
+      "refs": {
+        "navitime": "2683"
+      }
+    },
+    {
+      "id": "fuda",
+      "name": "布田",
+      "km": 14.9,
+      "refs": {
+        "navitime": "7917"
+      }
+    },
+    {
+      "id": "chofu",
+      "name": "調布",
+      "km": 15.5,
+      "kind": 3,
+      "refs": {
+        "navitime": "6197"
+      }
+    },
+    {
+      "id": "nishichofu",
+      "name": "西調布",
+      "km": 17,
+      "refs": {
+        "navitime": "4875"
+      }
+    },
+    {
+      "id": "tobitakyu",
+      "name": "飛田給",
+      "km": 17.7,
+      "refs": {
+        "navitime": "7696"
+      }
+    },
+    {
+      "id": "musashinodai",
+      "name": "武蔵野台",
+      "km": 18.8,
+      "refs": {
+        "navitime": "7974"
+      }
+    },
+    {
+      "id": "tamareien",
+      "name": "多磨霊園",
+      "km": 19.6,
+      "refs": {
+        "navitime": "5466"
+      }
+    },
+    {
+      "id": "higashifuchu",
+      "name": "東府中",
+      "km": 20.4,
+      "kind": 2,
+      "refs": {
+        "navitime": "6831"
+      }
+    },
+    {
+      "id": "fuchu",
+      "name": "府中",
+      "km": 21.9,
+      "kind": 2,
+      "refs": {
+        "navitime": "7923"
+      }
+    },
+    {
+      "id": "bubaigawara",
+      "name": "分倍河原",
+      "km": 22.8,
+      "kind": 2,
+      "refs": {
+        "navitime": "8051"
+      }
+    },
+    {
+      "id": "nakagawara",
+      "name": "中河原",
+      "km": 24.1,
+      "refs": {
+        "navitime": "6032"
+      }
+    },
+    {
+      "id": "seisekisakuragaoka",
+      "name": "聖蹟桜ヶ丘",
+      "km": 26.3,
+      "kind": 2,
+      "refs": {
+        "navitime": "4691"
+      }
+    },
+    {
+      "id": "mogusaen",
+      "name": "百草園",
+      "km": 27.9,
+      "refs": {
+        "navitime": "7813"
+      }
+    },
+    {
+      "id": "takahatafudo",
+      "name": "高幡不動",
+      "km": 29.7,
+      "kind": 2,
+      "refs": {
+        "navitime": "2624"
+      }
+    },
+    {
+      "id": "minamidaira",
+      "name": "南平",
+      "km": 31.4,
+      "refs": {
+        "navitime": "7161"
+      }
+    },
+    {
+      "id": "hirayamajoshikoen",
+      "name": "平山城址公園",
+      "km": 32.4,
+      "refs": {
+        "navitime": "8074"
+      }
+    },
+    {
+      "id": "naganuma",
+      "name": "長沼",
+      "km": 33.6,
+      "refs": {
+        "navitime": "6230"
+      }
+    },
+    {
+      "id": "kitano",
+      "name": "北野",
+      "km": 34.9,
+      "kind": 2,
+      "refs": {
+        "navitime": "8408"
+      }
+    },
+    {
+      "id": "keiohachioji",
+      "name": "京王八王子",
+      "km": 37.9,
+      "kind": 3,
+      "refs": {
+        "navitime": "1711"
+      }
+    },
+    {
+      "id": "keiotamagawa",
+      "name": "京王多摩川",
+      "km": 1.2,
+      "refs": {
+        "navitime": "1710"
+      }
+    },
+    {
+      "id": "keioinadazutsumi",
+      "name": "京王稲田堤",
+      "km": 2.5,
+      "refs": {
+        "navitime": "1707"
+      }
+    },
+    {
+      "id": "keioyomiuriland",
+      "name": "京王よみうりランド",
+      "km": 3.9,
+      "refs": {
+        "navitime": "1706"
+      }
+    },
+    {
+      "id": "inagi",
+      "name": "稲城",
+      "km": 5.5,
+      "refs": {
+        "navitime": "481"
+      }
+    },
+    {
+      "id": "wakabadai",
+      "name": "若葉台",
+      "km": 8.8,
+      "refs": {
+        "navitime": "3440"
+      }
+    },
+    {
+      "id": "keionagayama",
+      "name": "京王永山",
+      "km": 10.6,
+      "refs": {
+        "navitime": "1708"
+      }
+    },
+    {
+      "id": "keiotamacenter",
+      "name": "京王多摩センター",
+      "km": 12.9,
+      "kind": 2,
+      "refs": {
+        "navitime": "1709"
+      }
+    },
+    {
+      "id": "keiohorinouchi",
+      "name": "京王堀之内",
+      "km": 15.2,
+      "refs": {
+        "navitime": "1713"
+      }
+    },
+    {
+      "id": "minamiosawa",
+      "name": "南大沢",
+      "km": 18,
+      "refs": {
+        "navitime": "7130"
+      }
+    },
+    {
+      "id": "tamasakai",
+      "name": "多摩境",
+      "km": 19.8,
+      "refs": {
+        "navitime": "5462"
+      }
+    },
+    {
+      "id": "hashimoto",
+      "name": "橋本",
+      "km": 22.6,
+      "kind": 3,
+      "refs": {
+        "navitime": "1774"
+      }
+    },
+    {
+      "id": "fuchukeibaseimonmae",
+      "name": "府中競馬正門前",
+      "km": 0.9,
+      "kind": 2,
+      "refs": {
+        "navitime": "7925"
+      }
+    },
+    {
+      "id": "tamadobutsukoen",
+      "name": "多摩動物公園",
+      "km": 2,
+      "kind": 2,
+      "refs": {
+        "navitime": "5464"
+      }
+    },
+    {
+      "id": "keiokatakura",
+      "name": "京王片倉",
+      "km": 1.7,
+      "refs": {
+        "navitime": "1712"
+      }
+    },
+    {
+      "id": "yamada",
+      "name": "山田",
+      "km": 3.2,
+      "refs": {
+        "navitime": "3129"
+      }
+    },
+    {
+      "id": "mejirodai",
+      "name": "めじろ台",
+      "km": 4.3,
+      "refs": {
+        "navitime": "134"
+      }
+    },
+    {
+      "id": "hazama",
+      "name": "狭間",
+      "km": 5.6,
+      "refs": {
+        "navitime": "1776"
+      }
+    },
+    {
+      "id": "takao",
+      "name": "高尾",
+      "km": 6.9,
+      "kind": 2,
+      "refs": {
+        "navitime": "2628"
+      }
+    },
+    {
+      "id": "takaosanguchi",
+      "name": "高尾山口",
+      "km": 8.6,
+      "kind": 3,
+      "refs": {
+        "navitime": "2629"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "keio",
+      "name": "京王線",
+      "refs": {
+        "navitime": "1"
+      },
+      "stations": [
+        { "stationId": "shinjuku", "km": 0 },
+        { "stationId": "sasazuka", "km": 3.6 },
+        { "stationId": "daitabashi", "km": 4.4 },
+        { "stationId": "meidaimae", "km": 5.2 },
+        { "stationId": "shimotakaido", "km": 6.1 },
+        { "stationId": "sakurajosui", "km": 7 },
+        { "stationId": "kamikitazawa", "km": 7.8 },
+        { "stationId": "hachimanyama", "km": 8.4 },
+        { "stationId": "rokakoen", "km": 9.1 },
+        { "stationId": "chitosekarasuyama", "km": 9.9 },
+        { "stationId": "sengawa", "km": 11.5 },
+        { "stationId": "tsutsujigaoka", "km": 12.5 },
+        { "stationId": "shibasaki", "km": 13.3 },
+        { "stationId": "kokuryo", "km": 14.2 },
+        { "stationId": "fuda", "km": 14.9 },
+        { "stationId": "chofu", "km": 15.5 },
+        { "stationId": "nishichofu", "km": 17 },
+        { "stationId": "tobitakyu", "km": 17.7 },
+        { "stationId": "musashinodai", "km": 18.8 },
+        { "stationId": "tamareien", "km": 19.6 },
+        { "stationId": "higashifuchu", "km": 20.4 },
+        { "stationId": "fuchu", "km": 21.9 },
+        { "stationId": "bubaigawara", "km": 22.8 },
+        { "stationId": "nakagawara", "km": 24.1 },
+        { "stationId": "seisekisakuragaoka", "km": 26.3 },
+        { "stationId": "mogusaen", "km": 27.9 },
+        { "stationId": "takahatafudo", "km": 29.7 },
+        { "stationId": "minamidaira", "km": 31.4 },
+        { "stationId": "hirayamajoshikoen", "km": 32.4 },
+        { "stationId": "naganuma", "km": 33.6 },
+        { "stationId": "kitano", "km": 34.9 },
+        { "stationId": "keiohachioji", "km": 37.9 }
+      ]
+    },
+    {
+      "id": "keio_new",
+      "name": "京王新線",
+      "refs": {
+        "navitime": "2"
+      },
+      "stations": [
+        { "stationId": "shinjuku", "km": 0 },
+        { "stationId": "hatsudai", "km": 1.7 },
+        { "stationId": "hatagaya", "km": 2.7 },
+        { "stationId": "sasazuka", "km": 3.6 }
+      ]
+    },
+    {
+      "id": "sagamihara",
+      "name": "相模原線",
+      "refs": {
+        "navitime": "3"
+      },
+      "stations": [
+        { "stationId": "chofu", "km": 0 },
+        { "stationId": "keiotamagawa", "km": 1.2 },
+        { "stationId": "keioinadazutsumi", "km": 2.5 },
+        { "stationId": "keioyomiuriland", "km": 3.9 },
+        { "stationId": "inagi", "km": 5.5 },
+        { "stationId": "wakabadai", "km": 8.8 },
+        { "stationId": "keionagayama", "km": 10.6 },
+        { "stationId": "keiotamacenter", "km": 12.9 },
+        { "stationId": "keiohorinouchi", "km": 15.2 },
+        { "stationId": "minamiosawa", "km": 18 },
+        { "stationId": "tamasakai", "km": 19.8 },
+        { "stationId": "hashimoto", "km": 22.6 }
+      ]
+    },
+    {
+      "id": "takao",
+      "name": "高尾線",
+      "refs": {
+        "navitime": "4"
+      },
+      "stations": [
+        { "stationId": "kitano", "km": 0 },
+        { "stationId": "keiokatakura", "km": 1.7 },
+        { "stationId": "yamada", "km": 3.2 },
+        { "stationId": "mejirodai", "km": 4.3 },
+        { "stationId": "hazama", "km": 5.6 },
+        { "stationId": "takao", "km": 6.9 },
+        { "stationId": "takaosanguchi", "km": 8.6 }
+      ]
+    },
+    {
+      "id": "keibajo",
+      "name": "競馬場線",
+      "refs": {
+        "navitime": "5"
+      },
+      "stations": [
+        { "stationId": "higashifuchu", "km": 0 },
+        { "stationId": "fuchukeibaseimonmae", "km": 0.9 }
+      ]
+    },
+    {
+      "id": "dobutsuen",
+      "name": "動物園線",
+      "refs": {
+        "navitime": "6"
+      },
+      "stations": [
+        { "stationId": "takahatafudo", "km": 0 },
+        { "stationId": "tamadobutsukoen", "km": 2 }
+      ]
+    }
+  ],
+  "sources": {
+    "navitime": {
+      "company": "keio",
+      "lines": {
+        "1": {
+          "down": "1",
+          "up": "0"
+        },
+        "2": {
+          "down": "0",
+          "up": "1"
+        },
+        "3": {
+          "down": "1",
+          "up": "0"
+        },
+        "4": {
+          "down": "1",
+          "up": "0"
+        },
+        "5": {
+          "down": "1",
+          "up": "0"
+        },
+        "6": {
+          "down": "1",
+          "up": "0"
+        }
+      }
+    }
+  }
+}

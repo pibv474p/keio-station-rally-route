@@ -1,0 +1,16 @@
+{
+  "id": "keio_dobutsuen",
+  "name": "京王動物園線",
+  "operator": "京王電鉄",
+  "stations": [
+    { "id": "takahatafudo", "name": "高幡不動", "km": 0.0, "kind": 2, "refs": { "navitime": "2624" } },
+    { "id": "tamadobutsukoen", "name": "多摩動物公園", "km": 2.0, "kind": 2, "refs": { "navitime": "5464" } }
+  ],
+  "sources": {
+    "navitime": {
+      "company": "keio",
+      "lineId": "6",
+      "directionParam": { "down": "1", "up": "0" }
+    }
+  }
+}

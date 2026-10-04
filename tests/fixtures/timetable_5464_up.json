@@ -1,0 +1,2396 @@
+{
+ "meta": {
+  "kind": "timetable",
+  "stationRef": "5464",
+  "direction": "up",
+  "url": "https://transfer-train.navitime.biz/api/keio/timetable/5464/6/0?lang=ja",
+  "fetchedAt": "2026-10-04T05:12:36.980Z"
+ },
+ "body": {
+  "station": {
+   "id": "5464",
+   "name": "多摩動物公園",
+   "ruby": "たまどうぶつこうえん",
+   "english_name": "Tama-dōbutsukōen",
+   "numberings": [
+    {
+     "symbol": "KO47",
+     "color": "#ffffff",
+     "background_color": "#d5007f"
+    }
+   ]
+  },
+  "timetables": [
+   {
+    "target": "holiday",
+    "date": "2026-10-04",
+    "legend": {
+     "types": [
+      {
+       "name": "各駅停車",
+       "color": "#7f7f7f"
+      }
+     ],
+     "destinations": [
+      {
+       "name": "高幡不動",
+       "legend": "高"
+      }
+     ],
+     "platforms": [
+      {
+       "number": "１",
+       "name": "１番線"
+      },
+      {
+       "number": "２",
+       "name": "２番線"
+      }
+     ]
+    },
+    "operations": [
+     {
+      "hour": 5,
+      "minutes": [
+       {
+        "time": "2026-10-04T05:43:00+09:00",
+        "id": "00060084",
+        "train_no": "6300",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 6,
+      "minutes": [
+       {
+        "time": "2026-10-04T06:00:00+09:00",
+        "id": "00060085",
+        "train_no": "6302",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T06:16:00+09:00",
+        "id": "00060086",
+        "train_no": "6304",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T06:33:00+09:00",
+        "id": "00060087",
+        "train_no": "6306",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T06:52:00+09:00",
+        "id": "00060088",
+        "train_no": "6308",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 7,
+      "minutes": [
+       {
+        "time": "2026-10-04T07:15:00+09:00",
+        "id": "00060089",
+        "train_no": "6310",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T07:33:00+09:00",
+        "id": "0006008a",
+        "train_no": "6312",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T07:49:00+09:00",
+        "id": "0006008b",
+        "train_no": "6314",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 8,
+      "minutes": [
+       {
+        "time": "2026-10-04T08:08:00+09:00",
+        "id": "0006008c",
+        "train_no": "6316",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T08:28:00+09:00",
+        "id": "0006008d",
+        "train_no": "6318",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T08:47:00+09:00",
+        "id": "0006008e",
+        "train_no": "6320",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 9,
+      "minutes": [
+       {
+        "time": "2026-10-04T09:05:00+09:00",
+        "id": "0006008f",
+        "train_no": "6322",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T09:21:00+09:00",
+        "id": "00060090",
+        "train_no": "6324",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T09:36:00+09:00",
+        "id": "00060091",
+        "train_no": "6326",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T09:48:00+09:00",
+        "id": "000600b9",
+        "train_no": "6328",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 10,
+      "minutes": [
+       {
+        "time": "2026-10-04T10:00:00+09:00",
+        "id": "00060092",
+        "train_no": "6330",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T10:12:00+09:00",
+        "id": "000600ba",
+        "train_no": "6332",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T10:24:00+09:00",
+        "id": "00060093",
+        "train_no": "6334",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T10:36:00+09:00",
+        "id": "000600bb",
+        "train_no": "6336",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T10:48:00+09:00",
+        "id": "00060094",
+        "train_no": "6338",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 11,
+      "minutes": [
+       {
+        "time": "2026-10-04T11:00:00+09:00",
+        "id": "000600bc",
+        "train_no": "6340",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T11:12:00+09:00",
+        "id": "00060095",
+        "train_no": "6342",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T11:24:00+09:00",
+        "id": "000600bd",
+        "train_no": "6344",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T11:36:00+09:00",
+        "id": "00060096",
+        "train_no": "6346",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T11:48:00+09:00",
+        "id": "000600be",
+        "train_no": "6348",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 12,
+      "minutes": [
+       {
+        "time": "2026-10-04T12:00:00+09:00",
+        "id": "00060097",
+        "train_no": "6350",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T12:12:00+09:00",
+        "id": "000600bf",
+        "train_no": "6352",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T12:24:00+09:00",
+        "id": "00060098",
+        "train_no": "6354",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T12:36:00+09:00",
+        "id": "000600c0",
+        "train_no": "6356",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T12:48:00+09:00",
+        "id": "00060099",
+        "train_no": "6358",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 13,
+      "minutes": [
+       {
+        "time": "2026-10-04T13:00:00+09:00",
+        "id": "000600c1",
+        "train_no": "6360",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T13:12:00+09:00",
+        "id": "0006009a",
+        "train_no": "6362",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T13:24:00+09:00",
+        "id": "000600c2",
+        "train_no": "6364",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T13:36:00+09:00",
+        "id": "0006009b",
+        "train_no": "6366",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T13:48:00+09:00",
+        "id": "000600c3",
+        "train_no": "6368",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 14,
+      "minutes": [
+       {
+        "time": "2026-10-04T14:00:00+09:00",
+        "id": "0006009c",
+        "train_no": "6370",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T14:12:00+09:00",
+        "id": "000600c4",
+        "train_no": "6372",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T14:24:00+09:00",
+        "id": "0006009d",
+        "train_no": "6374",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T14:36:00+09:00",
+        "id": "000600c5",
+        "train_no": "6376",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T14:48:00+09:00",
+        "id": "0006009e",
+        "train_no": "6378",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 15,
+      "minutes": [
+       {
+        "time": "2026-10-04T15:00:00+09:00",
+        "id": "000600c6",
+        "train_no": "6380",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T15:12:00+09:00",
+        "id": "0006009f",
+        "train_no": "6382",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T15:24:00+09:00",
+        "id": "000600c7",
+        "train_no": "6384",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T15:36:00+09:00",
+        "id": "000600a0",
+        "train_no": "6386",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T15:48:00+09:00",
+        "id": "000600c8",
+        "train_no": "6388",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 16,
+      "minutes": [
+       {
+        "time": "2026-10-04T16:00:00+09:00",
+        "id": "000600a1",
+        "train_no": "6390",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T16:12:00+09:00",
+        "id": "000600c9",
+        "train_no": "6392",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T16:24:00+09:00",
+        "id": "000600a2",
+        "train_no": "6394",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T16:36:00+09:00",
+        "id": "000600ca",
+        "train_no": "6396",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T16:48:00+09:00",
+        "id": "000600a3",
+        "train_no": "6398",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 17,
+      "minutes": [
+       {
+        "time": "2026-10-04T17:00:00+09:00",
+        "id": "000600cb",
+        "train_no": "6300A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T17:12:00+09:00",
+        "id": "000600a4",
+        "train_no": "6302A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T17:24:00+09:00",
+        "id": "000600cc",
+        "train_no": "6304A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T17:36:00+09:00",
+        "id": "000600a5",
+        "train_no": "6306A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T17:48:00+09:00",
+        "id": "000600cd",
+        "train_no": "6308A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T17:55:00+09:00",
+        "id": "000600a6",
+        "train_no": "6310A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 18,
+      "minutes": [
+       {
+        "time": "2026-10-04T18:12:00+09:00",
+        "id": "000600a7",
+        "train_no": "6312A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T18:32:00+09:00",
+        "id": "000600a8",
+        "train_no": "6314A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T18:52:00+09:00",
+        "id": "000600a9",
+        "train_no": "6316A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 19,
+      "minutes": [
+       {
+        "time": "2026-10-04T19:10:00+09:00",
+        "id": "000600aa",
+        "train_no": "6318A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T19:30:00+09:00",
+        "id": "000600ab",
+        "train_no": "6320A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T19:50:00+09:00",
+        "id": "000600ac",
+        "train_no": "6322A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 20,
+      "minutes": [
+       {
+        "time": "2026-10-04T20:10:00+09:00",
+        "id": "000600ad",
+        "train_no": "6324A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T20:30:00+09:00",
+        "id": "000600ae",
+        "train_no": "6326A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T20:50:00+09:00",
+        "id": "000600af",
+        "train_no": "6328A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 21,
+      "minutes": [
+       {
+        "time": "2026-10-04T21:10:00+09:00",
+        "id": "000600b0",
+        "train_no": "6330A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T21:30:00+09:00",
+        "id": "000600b1",
+        "train_no": "6332A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T21:50:00+09:00",
+        "id": "000600b2",
+        "train_no": "6334A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 22,
+      "minutes": [
+       {
+        "time": "2026-10-04T22:10:00+09:00",
+        "id": "000600b3",
+        "train_no": "6336A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T22:30:00+09:00",
+        "id": "000600b4",
+        "train_no": "6338A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T22:50:00+09:00",
+        "id": "000600b5",
+        "train_no": "6340A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 23,
+      "minutes": [
+       {
+        "time": "2026-10-04T23:10:00+09:00",
+        "id": "000600b6",
+        "train_no": "6342A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T23:30:00+09:00",
+        "id": "000600b7",
+        "train_no": "6344A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T23:45:00+09:00",
+        "id": "000600b8",
+        "train_no": "6346A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "target": "weekday",
+    "date": "2026-10-05",
+    "legend": {
+     "types": [
+      {
+       "name": "各駅停車",
+       "color": "#7f7f7f"
+      }
+     ],
+     "destinations": [
+      {
+       "name": "高幡不動",
+       "legend": "高"
+      }
+     ],
+     "platforms": [
+      {
+       "number": "２",
+       "name": "２番線"
+      }
+     ]
+    },
+    "operations": [
+     {
+      "hour": 5,
+      "minutes": [
+       {
+        "time": "2026-10-05T05:43:00+09:00",
+        "id": "0006004a",
+        "train_no": "6300",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T05:59:00+09:00",
+        "id": "0006004b",
+        "train_no": "6302",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 6,
+      "minutes": [
+       {
+        "time": "2026-10-05T06:18:00+09:00",
+        "id": "0006004c",
+        "train_no": "6304",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T06:38:00+09:00",
+        "id": "0006004d",
+        "train_no": "6306",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T06:54:00+09:00",
+        "id": "0006004e",
+        "train_no": "6308",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 7,
+      "minutes": [
+       {
+        "time": "2026-10-05T07:10:00+09:00",
+        "id": "0006004f",
+        "train_no": "6310",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T07:26:00+09:00",
+        "id": "00060050",
+        "train_no": "6312",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T07:40:00+09:00",
+        "id": "00060051",
+        "train_no": "6314",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T07:54:00+09:00",
+        "id": "00060052",
+        "train_no": "6316",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 8,
+      "minutes": [
+       {
+        "time": "2026-10-05T08:08:00+09:00",
+        "id": "00060053",
+        "train_no": "6318",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T08:26:00+09:00",
+        "id": "00060054",
+        "train_no": "6320",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T08:42:00+09:00",
+        "id": "00060055",
+        "train_no": "6322",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T08:59:00+09:00",
+        "id": "00060056",
+        "train_no": "6324",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 9,
+      "minutes": [
+       {
+        "time": "2026-10-05T09:16:00+09:00",
+        "id": "00060057",
+        "train_no": "6326",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T09:32:00+09:00",
+        "id": "00060058",
+        "train_no": "6328",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T09:48:00+09:00",
+        "id": "00060059",
+        "train_no": "6330",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 10,
+      "minutes": [
+       {
+        "time": "2026-10-05T10:04:00+09:00",
+        "id": "0006005a",
+        "train_no": "6332",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T10:20:00+09:00",
+        "id": "0006005b",
+        "train_no": "6334",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T10:40:00+09:00",
+        "id": "0006005c",
+        "train_no": "6336",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 11,
+      "minutes": [
+       {
+        "time": "2026-10-05T11:00:00+09:00",
+        "id": "0006005d",
+        "train_no": "6338",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T11:20:00+09:00",
+        "id": "0006005e",
+        "train_no": "6340",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T11:41:00+09:00",
+        "id": "0006005f",
+        "train_no": "6342",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 12,
+      "minutes": [
+       {
+        "time": "2026-10-05T12:08:00+09:00",
+        "id": "00060060",
+        "train_no": "6344",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T12:28:00+09:00",
+        "id": "00060061",
+        "train_no": "6346",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T12:48:00+09:00",
+        "id": "00060062",
+        "train_no": "6348",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 13,
+      "minutes": [
+       {
+        "time": "2026-10-05T13:08:00+09:00",
+        "id": "00060063",
+        "train_no": "6350",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T13:28:00+09:00",
+        "id": "00060064",
+        "train_no": "6352",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T13:48:00+09:00",
+        "id": "00060065",
+        "train_no": "6354",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 14,
+      "minutes": [
+       {
+        "time": "2026-10-05T14:08:00+09:00",
+        "id": "00060066",
+        "train_no": "6356",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T14:28:00+09:00",
+        "id": "00060067",
+        "train_no": "6358",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T14:48:00+09:00",
+        "id": "00060068",
+        "train_no": "6360",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 15,
+      "minutes": [
+       {
+        "time": "2026-10-05T15:08:00+09:00",
+        "id": "00060069",
+        "train_no": "6362",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T15:28:00+09:00",
+        "id": "0006006a",
+        "train_no": "6364",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T15:48:00+09:00",
+        "id": "0006006b",
+        "train_no": "6366",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 16,
+      "minutes": [
+       {
+        "time": "2026-10-05T16:08:00+09:00",
+        "id": "0006006c",
+        "train_no": "6368",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T16:28:00+09:00",
+        "id": "0006006d",
+        "train_no": "6370",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T16:48:00+09:00",
+        "id": "0006006e",
+        "train_no": "6372",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 17,
+      "minutes": [
+       {
+        "time": "2026-10-05T17:08:00+09:00",
+        "id": "0006006f",
+        "train_no": "6374",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T17:30:00+09:00",
+        "id": "00060070",
+        "train_no": "6376",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T17:50:00+09:00",
+        "id": "00060071",
+        "train_no": "6378",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 18,
+      "minutes": [
+       {
+        "time": "2026-10-05T18:10:00+09:00",
+        "id": "00060072",
+        "train_no": "6380",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T18:30:00+09:00",
+        "id": "00060073",
+        "train_no": "6382",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T18:50:00+09:00",
+        "id": "00060074",
+        "train_no": "6384",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 19,
+      "minutes": [
+       {
+        "time": "2026-10-05T19:10:00+09:00",
+        "id": "00060075",
+        "train_no": "6386",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T19:30:00+09:00",
+        "id": "00060076",
+        "train_no": "6388",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T19:50:00+09:00",
+        "id": "00060077",
+        "train_no": "6390",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 20,
+      "minutes": [
+       {
+        "time": "2026-10-05T20:10:00+09:00",
+        "id": "00060078",
+        "train_no": "6392",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T20:30:00+09:00",
+        "id": "00060079",
+        "train_no": "6394",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T20:50:00+09:00",
+        "id": "0006007a",
+        "train_no": "6396",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 21,
+      "minutes": [
+       {
+        "time": "2026-10-05T21:10:00+09:00",
+        "id": "0006007b",
+        "train_no": "6398",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T21:30:00+09:00",
+        "id": "0006007c",
+        "train_no": "6300A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T21:50:00+09:00",
+        "id": "0006007d",
+        "train_no": "6302A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 22,
+      "minutes": [
+       {
+        "time": "2026-10-05T22:10:00+09:00",
+        "id": "0006007e",
+        "train_no": "6304A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T22:30:00+09:00",
+        "id": "0006007f",
+        "train_no": "6306A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T22:50:00+09:00",
+        "id": "00060080",
+        "train_no": "6308A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 23,
+      "minutes": [
+       {
+        "time": "2026-10-05T23:06:00+09:00",
+        "id": "00060081",
+        "train_no": "6310A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T23:28:00+09:00",
+        "id": "00060082",
+        "train_no": "6312A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T23:45:00+09:00",
+        "id": "00060083",
+        "train_no": "6314A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "高幡不動",
+          "legend": "高"
+         }
+        ],
+        "platform": "２",
+        "remarks": {}
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "detail": {
+   "revision": {
+    "weekday": {
+     "date": "2026-08-17",
+     "type": "revision"
+    },
+    "holiday": {
+     "date": "2026-08-16",
+     "type": "revision"
+    }
+   }
+  }
+ }
+}

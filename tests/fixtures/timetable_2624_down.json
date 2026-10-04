@@ -1,0 +1,2376 @@
+{
+ "meta": {
+  "kind": "timetable",
+  "stationRef": "2624",
+  "direction": "down",
+  "url": "https://transfer-train.navitime.biz/api/keio/timetable/2624/6/1?lang=ja",
+  "fetchedAt": "2026-10-04T05:11:57.281Z"
+ },
+ "body": {
+  "station": {
+   "id": "2624",
+   "name": "高幡不動",
+   "ruby": "たかはたふどう",
+   "english_name": "Takahatafudō",
+   "numberings": [
+    {
+     "symbol": "KO29",
+     "color": "#ffffff",
+     "background_color": "#d5007f"
+    }
+   ]
+  },
+  "timetables": [
+   {
+    "target": "holiday",
+    "date": "2026-10-04",
+    "legend": {
+     "types": [
+      {
+       "name": "各駅停車",
+       "color": "#7f7f7f"
+      }
+     ],
+     "destinations": [
+      {
+       "name": "多摩動物公園",
+       "legend": "動"
+      }
+     ],
+     "platforms": [
+      {
+       "number": "１",
+       "name": "１番線"
+      }
+     ]
+    },
+    "operations": [
+     {
+      "hour": 5,
+      "minutes": [
+       {
+        "time": "2026-10-04T05:35:00+09:00",
+        "id": "80060083",
+        "train_no": "6301",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T05:51:00+09:00",
+        "id": "80060084",
+        "train_no": "6303",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 6,
+      "minutes": [
+       {
+        "time": "2026-10-04T06:07:00+09:00",
+        "id": "80060085",
+        "train_no": "6305",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T06:25:00+09:00",
+        "id": "80060086",
+        "train_no": "6307",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T06:44:00+09:00",
+        "id": "80060087",
+        "train_no": "6309",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 7,
+      "minutes": [
+       {
+        "time": "2026-10-04T07:06:00+09:00",
+        "id": "80060088",
+        "train_no": "6311",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T07:22:00+09:00",
+        "id": "80060089",
+        "train_no": "6313",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T07:41:00+09:00",
+        "id": "8006008a",
+        "train_no": "6315",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 8,
+      "minutes": [
+       {
+        "time": "2026-10-04T08:00:00+09:00",
+        "id": "8006008b",
+        "train_no": "6317",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T08:19:00+09:00",
+        "id": "8006008c",
+        "train_no": "6319",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T08:40:00+09:00",
+        "id": "8006008d",
+        "train_no": "6321",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T08:57:00+09:00",
+        "id": "8006008e",
+        "train_no": "6323",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 9,
+      "minutes": [
+       {
+        "time": "2026-10-04T09:13:00+09:00",
+        "id": "8006008f",
+        "train_no": "6325",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T09:28:00+09:00",
+        "id": "80060090",
+        "train_no": "6327",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T09:44:00+09:00",
+        "id": "80060091",
+        "train_no": "6329",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T09:56:00+09:00",
+        "id": "800600b8",
+        "train_no": "6331",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 10,
+      "minutes": [
+       {
+        "time": "2026-10-04T10:08:00+09:00",
+        "id": "80060092",
+        "train_no": "6333",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T10:20:00+09:00",
+        "id": "800600b9",
+        "train_no": "6335",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T10:32:00+09:00",
+        "id": "80060093",
+        "train_no": "6337",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T10:44:00+09:00",
+        "id": "800600ba",
+        "train_no": "6339",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T10:56:00+09:00",
+        "id": "80060094",
+        "train_no": "6341",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 11,
+      "minutes": [
+       {
+        "time": "2026-10-04T11:08:00+09:00",
+        "id": "800600bb",
+        "train_no": "6343",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T11:20:00+09:00",
+        "id": "80060095",
+        "train_no": "6345",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T11:32:00+09:00",
+        "id": "800600bc",
+        "train_no": "6347",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T11:44:00+09:00",
+        "id": "80060096",
+        "train_no": "6349",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T11:56:00+09:00",
+        "id": "800600bd",
+        "train_no": "6351",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 12,
+      "minutes": [
+       {
+        "time": "2026-10-04T12:08:00+09:00",
+        "id": "80060097",
+        "train_no": "6353",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T12:20:00+09:00",
+        "id": "800600be",
+        "train_no": "6355",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T12:32:00+09:00",
+        "id": "80060098",
+        "train_no": "6357",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T12:44:00+09:00",
+        "id": "800600bf",
+        "train_no": "6359",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T12:56:00+09:00",
+        "id": "80060099",
+        "train_no": "6361",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 13,
+      "minutes": [
+       {
+        "time": "2026-10-04T13:08:00+09:00",
+        "id": "800600c0",
+        "train_no": "6363",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T13:20:00+09:00",
+        "id": "8006009a",
+        "train_no": "6365",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T13:32:00+09:00",
+        "id": "800600c1",
+        "train_no": "6367",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T13:44:00+09:00",
+        "id": "8006009b",
+        "train_no": "6369",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T13:56:00+09:00",
+        "id": "800600c2",
+        "train_no": "6371",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 14,
+      "minutes": [
+       {
+        "time": "2026-10-04T14:08:00+09:00",
+        "id": "8006009c",
+        "train_no": "6373",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T14:20:00+09:00",
+        "id": "800600c3",
+        "train_no": "6375",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T14:32:00+09:00",
+        "id": "8006009d",
+        "train_no": "6377",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T14:44:00+09:00",
+        "id": "800600c4",
+        "train_no": "6379",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T14:56:00+09:00",
+        "id": "8006009e",
+        "train_no": "6381",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 15,
+      "minutes": [
+       {
+        "time": "2026-10-04T15:08:00+09:00",
+        "id": "800600c5",
+        "train_no": "6383",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T15:20:00+09:00",
+        "id": "8006009f",
+        "train_no": "6385",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T15:32:00+09:00",
+        "id": "800600c6",
+        "train_no": "6387",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T15:44:00+09:00",
+        "id": "800600a0",
+        "train_no": "6389",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T15:56:00+09:00",
+        "id": "800600c7",
+        "train_no": "6391",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 16,
+      "minutes": [
+       {
+        "time": "2026-10-04T16:08:00+09:00",
+        "id": "800600a1",
+        "train_no": "6393",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T16:20:00+09:00",
+        "id": "800600c8",
+        "train_no": "6395",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T16:32:00+09:00",
+        "id": "800600a2",
+        "train_no": "6397",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T16:44:00+09:00",
+        "id": "800600c9",
+        "train_no": "6399",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T16:56:00+09:00",
+        "id": "800600a3",
+        "train_no": "6301A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 17,
+      "minutes": [
+       {
+        "time": "2026-10-04T17:08:00+09:00",
+        "id": "800600ca",
+        "train_no": "6303A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T17:20:00+09:00",
+        "id": "800600a4",
+        "train_no": "6305A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T17:32:00+09:00",
+        "id": "800600cb",
+        "train_no": "6307A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T17:44:00+09:00",
+        "id": "800600a5",
+        "train_no": "6309A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 18,
+      "minutes": [
+       {
+        "time": "2026-10-04T18:03:00+09:00",
+        "id": "800600a6",
+        "train_no": "6311A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T18:24:00+09:00",
+        "id": "800600a7",
+        "train_no": "6313A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T18:40:00+09:00",
+        "id": "800600a8",
+        "train_no": "6315A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 19,
+      "minutes": [
+       {
+        "time": "2026-10-04T19:00:00+09:00",
+        "id": "800600a9",
+        "train_no": "6317A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T19:20:00+09:00",
+        "id": "800600aa",
+        "train_no": "6319A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T19:40:00+09:00",
+        "id": "800600ab",
+        "train_no": "6321A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 20,
+      "minutes": [
+       {
+        "time": "2026-10-04T20:00:00+09:00",
+        "id": "800600ac",
+        "train_no": "6323A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T20:20:00+09:00",
+        "id": "800600ad",
+        "train_no": "6325A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T20:40:00+09:00",
+        "id": "800600ae",
+        "train_no": "6327A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 21,
+      "minutes": [
+       {
+        "time": "2026-10-04T21:00:00+09:00",
+        "id": "800600af",
+        "train_no": "6329A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T21:20:00+09:00",
+        "id": "800600b0",
+        "train_no": "6331A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T21:40:00+09:00",
+        "id": "800600b1",
+        "train_no": "6333A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 22,
+      "minutes": [
+       {
+        "time": "2026-10-04T22:00:00+09:00",
+        "id": "800600b2",
+        "train_no": "6335A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T22:20:00+09:00",
+        "id": "800600b3",
+        "train_no": "6337A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T22:41:00+09:00",
+        "id": "800600b4",
+        "train_no": "6339A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 23,
+      "minutes": [
+       {
+        "time": "2026-10-04T23:00:00+09:00",
+        "id": "800600b5",
+        "train_no": "6341A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T23:20:00+09:00",
+        "id": "800600b6",
+        "train_no": "6343A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-04T23:38:00+09:00",
+        "id": "800600b7",
+        "train_no": "6345A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "target": "weekday",
+    "date": "2026-10-05",
+    "legend": {
+     "types": [
+      {
+       "name": "各駅停車",
+       "color": "#7f7f7f"
+      }
+     ],
+     "destinations": [
+      {
+       "name": "多摩動物公園",
+       "legend": "動"
+      }
+     ],
+     "platforms": [
+      {
+       "number": "１",
+       "name": "１番線"
+      }
+     ]
+    },
+    "operations": [
+     {
+      "hour": 5,
+      "minutes": [
+       {
+        "time": "2026-10-05T05:35:00+09:00",
+        "id": "80060049",
+        "train_no": "6301",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T05:51:00+09:00",
+        "id": "8006004a",
+        "train_no": "6303",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 6,
+      "minutes": [
+       {
+        "time": "2026-10-05T06:10:00+09:00",
+        "id": "8006004b",
+        "train_no": "6305",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T06:30:00+09:00",
+        "id": "8006004c",
+        "train_no": "6307",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T06:46:00+09:00",
+        "id": "8006004d",
+        "train_no": "6309",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 7,
+      "minutes": [
+       {
+        "time": "2026-10-05T07:02:00+09:00",
+        "id": "8006004e",
+        "train_no": "6311",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T07:18:00+09:00",
+        "id": "8006004f",
+        "train_no": "6313",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T07:33:00+09:00",
+        "id": "80060050",
+        "train_no": "6315",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T07:47:00+09:00",
+        "id": "80060051",
+        "train_no": "6317",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 8,
+      "minutes": [
+       {
+        "time": "2026-10-05T08:01:00+09:00",
+        "id": "80060052",
+        "train_no": "6319",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T08:16:00+09:00",
+        "id": "80060053",
+        "train_no": "6321",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T08:35:00+09:00",
+        "id": "80060054",
+        "train_no": "6323",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T08:52:00+09:00",
+        "id": "80060055",
+        "train_no": "6325",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 9,
+      "minutes": [
+       {
+        "time": "2026-10-05T09:09:00+09:00",
+        "id": "80060056",
+        "train_no": "6327",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T09:24:00+09:00",
+        "id": "80060057",
+        "train_no": "6329",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T09:41:00+09:00",
+        "id": "80060058",
+        "train_no": "6331",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T09:57:00+09:00",
+        "id": "80060059",
+        "train_no": "6333",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 10,
+      "minutes": [
+       {
+        "time": "2026-10-05T10:11:00+09:00",
+        "id": "8006005a",
+        "train_no": "6335",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T10:30:00+09:00",
+        "id": "8006005b",
+        "train_no": "6337",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T10:50:00+09:00",
+        "id": "8006005c",
+        "train_no": "6339",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 11,
+      "minutes": [
+       {
+        "time": "2026-10-05T11:11:00+09:00",
+        "id": "8006005d",
+        "train_no": "6341",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T11:32:00+09:00",
+        "id": "8006005e",
+        "train_no": "6343",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T11:56:00+09:00",
+        "id": "8006005f",
+        "train_no": "6345",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 12,
+      "minutes": [
+       {
+        "time": "2026-10-05T12:17:00+09:00",
+        "id": "80060060",
+        "train_no": "6347",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T12:37:00+09:00",
+        "id": "80060061",
+        "train_no": "6349",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T12:57:00+09:00",
+        "id": "80060062",
+        "train_no": "6351",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 13,
+      "minutes": [
+       {
+        "time": "2026-10-05T13:17:00+09:00",
+        "id": "80060063",
+        "train_no": "6353",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T13:37:00+09:00",
+        "id": "80060064",
+        "train_no": "6355",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T13:57:00+09:00",
+        "id": "80060065",
+        "train_no": "6357",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 14,
+      "minutes": [
+       {
+        "time": "2026-10-05T14:17:00+09:00",
+        "id": "80060066",
+        "train_no": "6359",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T14:37:00+09:00",
+        "id": "80060067",
+        "train_no": "6361",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T14:57:00+09:00",
+        "id": "80060068",
+        "train_no": "6363",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 15,
+      "minutes": [
+       {
+        "time": "2026-10-05T15:17:00+09:00",
+        "id": "80060069",
+        "train_no": "6365",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T15:37:00+09:00",
+        "id": "8006006a",
+        "train_no": "6367",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T15:57:00+09:00",
+        "id": "8006006b",
+        "train_no": "6369",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 16,
+      "minutes": [
+       {
+        "time": "2026-10-05T16:17:00+09:00",
+        "id": "8006006c",
+        "train_no": "6371",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T16:37:00+09:00",
+        "id": "8006006d",
+        "train_no": "6373",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T16:57:00+09:00",
+        "id": "8006006e",
+        "train_no": "6375",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 17,
+      "minutes": [
+       {
+        "time": "2026-10-05T17:20:00+09:00",
+        "id": "8006006f",
+        "train_no": "6377",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T17:40:00+09:00",
+        "id": "80060070",
+        "train_no": "6379",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T17:59:00+09:00",
+        "id": "80060071",
+        "train_no": "6381",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 18,
+      "minutes": [
+       {
+        "time": "2026-10-05T18:20:00+09:00",
+        "id": "80060072",
+        "train_no": "6383",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T18:40:00+09:00",
+        "id": "80060073",
+        "train_no": "6385",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T18:59:00+09:00",
+        "id": "80060074",
+        "train_no": "6387",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 19,
+      "minutes": [
+       {
+        "time": "2026-10-05T19:20:00+09:00",
+        "id": "80060075",
+        "train_no": "6389",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T19:40:00+09:00",
+        "id": "80060076",
+        "train_no": "6391",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T19:59:00+09:00",
+        "id": "80060077",
+        "train_no": "6393",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 20,
+      "minutes": [
+       {
+        "time": "2026-10-05T20:20:00+09:00",
+        "id": "80060078",
+        "train_no": "6395",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T20:40:00+09:00",
+        "id": "80060079",
+        "train_no": "6397",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T20:59:00+09:00",
+        "id": "8006007a",
+        "train_no": "6399",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 21,
+      "minutes": [
+       {
+        "time": "2026-10-05T21:20:00+09:00",
+        "id": "8006007b",
+        "train_no": "6301A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T21:41:00+09:00",
+        "id": "8006007c",
+        "train_no": "6303A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T21:59:00+09:00",
+        "id": "8006007d",
+        "train_no": "6305A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 22,
+      "minutes": [
+       {
+        "time": "2026-10-05T22:20:00+09:00",
+        "id": "8006007e",
+        "train_no": "6307A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T22:41:00+09:00",
+        "id": "8006007f",
+        "train_no": "6309A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T22:58:00+09:00",
+        "id": "80060080",
+        "train_no": "6311A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     },
+     {
+      "hour": 23,
+      "minutes": [
+       {
+        "time": "2026-10-05T23:17:00+09:00",
+        "id": "80060081",
+        "train_no": "6313A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       },
+       {
+        "time": "2026-10-05T23:38:00+09:00",
+        "id": "80060082",
+        "train_no": "6315A",
+        "type": "各駅停車",
+        "color": "#7f7f7f",
+        "is_departure": true,
+        "destinations": [
+         {
+          "name": "多摩動物公園",
+          "legend": "動"
+         }
+        ],
+        "platform": "１",
+        "remarks": {}
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "detail": {
+   "revision": {
+    "weekday": {
+     "date": "2026-08-17",
+     "type": "revision"
+    },
+    "holiday": {
+     "date": "2026-08-16",
+     "type": "revision"
+    }
+   }
+  }
+ }
+}

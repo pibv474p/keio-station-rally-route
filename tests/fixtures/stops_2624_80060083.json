@@ -1,0 +1,76 @@
+{
+ "meta": {
+  "kind": "stops",
+  "stationRef": "2624",
+  "direction": "down",
+  "operation": {
+   "time": "2026-10-04T05:35:00+09:00",
+   "id": "80060083",
+   "train_no": "6301",
+   "type": "各駅停車",
+   "color": "#7f7f7f",
+   "is_departure": true,
+   "destinations": [
+    {
+     "name": "多摩動物公園",
+     "legend": "動"
+    }
+   ],
+   "platform": "１",
+   "remarks": {}
+  },
+  "url": "https://transfer-train.navitime.biz/api/keio/stops/2624/6?operation_id=80060083&datetime=2026-10-04T05%3A35%3A00%2B09%3A00&lang=ja&direction=1",
+  "fetchedAt": "2026-10-04T05:11:57.808Z"
+ },
+ "body": {
+  "station": {
+   "id": "2624",
+   "name": "高幡不動",
+   "ruby": "たかはたふどう",
+   "english_name": "Takahatafudō",
+   "numberings": [
+    {
+     "symbol": "KO29",
+     "color": "#ffffff",
+     "background_color": "#d5007f"
+    }
+   ]
+  },
+  "stops": [
+   {
+    "id": "2624",
+    "name": "高幡不動",
+    "numberings": [
+     {
+      "symbol": "KO29",
+      "color": "#ffffff",
+      "background_color": "#d5007f"
+     }
+    ],
+    "advancing_line_id": "6",
+    "is_transit_station": true,
+    "departure_time": "2026-10-04T05:35:00+09:00",
+    "train_no": "6301",
+    "train_short_name": "各駅停車",
+    "is_exist_around_bus_stops": true
+   },
+   {},
+   {
+    "id": "5464",
+    "name": "多摩動物公園",
+    "numberings": [
+     {
+      "symbol": "KO47",
+      "color": "#ffffff",
+      "background_color": "#d5007f"
+     }
+    ],
+    "advancing_line_id": "6",
+    "arrive_time": "2026-10-04T05:38:00+09:00",
+    "train_no": "6301",
+    "train_short_name": "各駅停車",
+    "is_exist_around_bus_stops": true
+   }
+  ]
+ }
+}
