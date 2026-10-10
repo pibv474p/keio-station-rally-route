@@ -1,0 +1,379 @@
+{
+ "note": "OpenStreetMap の徒歩ルート（FOSSGIS OSRM foot）による駅代表点間の歩行距離。2026-10-10 取得。minutes がある組は Google マップで確認した所要時間を使う",
+ "pairs": [
+  {
+   "a": "shinjuku",
+   "b": "sasazuka",
+   "meters": 3171
+  },
+  {
+   "a": "sasazuka",
+   "b": "daitabashi",
+   "meters": 975
+  },
+  {
+   "a": "daitabashi",
+   "b": "meidaimae",
+   "meters": 1000,
+   "minutes": 13,
+   "source": "Google Maps（2026-10-10 ユーザー確認）",
+   "osmMeters": 998
+  },
+  {
+   "a": "meidaimae",
+   "b": "shimotakaido",
+   "meters": 1032
+  },
+  {
+   "a": "shimotakaido",
+   "b": "sakurajosui",
+   "meters": 1068
+  },
+  {
+   "a": "sakurajosui",
+   "b": "kamikitazawa",
+   "meters": 850,
+   "minutes": 12,
+   "source": "Google Maps（2026-10-10 ユーザー確認）",
+   "osmMeters": 865
+  },
+  {
+   "a": "kamikitazawa",
+   "b": "hachimanyama",
+   "meters": 650,
+   "osmMeters": 620,
+   "minutes": 9,
+   "source": "Google Maps（2026-10-10 ユーザー確認）"
+  },
+  {
+   "a": "hachimanyama",
+   "b": "rokakoen",
+   "meters": 1029
+  },
+  {
+   "a": "rokakoen",
+   "b": "chitosekarasuyama",
+   "meters": 1029
+  },
+  {
+   "a": "chitosekarasuyama",
+   "b": "sengawa",
+   "meters": 1787
+  },
+  {
+   "a": "sengawa",
+   "b": "tsutsujigaoka",
+   "meters": 1279
+  },
+  {
+   "a": "tsutsujigaoka",
+   "b": "shibasaki",
+   "meters": 1179
+  },
+  {
+   "a": "shibasaki",
+   "b": "kokuryo",
+   "meters": 1190
+  },
+  {
+   "a": "kokuryo",
+   "b": "fuda",
+   "meters": 727
+  },
+  {
+   "a": "fuda",
+   "b": "chofu",
+   "meters": 719
+  },
+  {
+   "a": "chofu",
+   "b": "nishichofu",
+   "meters": 1645
+  },
+  {
+   "a": "nishichofu",
+   "b": "tobitakyu",
+   "meters": 750,
+   "minutes": 10,
+   "source": "Google Maps（2026-10-10 ユーザー確認）",
+   "osmMeters": 831
+  },
+  {
+   "a": "tobitakyu",
+   "b": "musashinodai",
+   "meters": 1429
+  },
+  {
+   "a": "musashinodai",
+   "b": "tamareien",
+   "meters": 989
+  },
+  {
+   "a": "tamareien",
+   "b": "higashifuchu",
+   "meters": 940
+  },
+  {
+   "a": "higashifuchu",
+   "b": "fuchu",
+   "meters": 1652
+  },
+  {
+   "a": "fuchu",
+   "b": "bubaigawara",
+   "meters": 1560
+  },
+  {
+   "a": "bubaigawara",
+   "b": "nakagawara",
+   "meters": 1745
+  },
+  {
+   "a": "nakagawara",
+   "b": "seisekisakuragaoka",
+   "meters": 1775
+  },
+  {
+   "a": "seisekisakuragaoka",
+   "b": "mogusaen",
+   "meters": 1954
+  },
+  {
+   "a": "mogusaen",
+   "b": "takahatafudo",
+   "meters": 1922
+  },
+  {
+   "a": "takahatafudo",
+   "b": "minamidaira",
+   "meters": 2836
+  },
+  {
+   "a": "minamidaira",
+   "b": "hirayamajoshikoen",
+   "meters": 1566
+  },
+  {
+   "a": "hirayamajoshikoen",
+   "b": "naganuma",
+   "meters": 1593
+  },
+  {
+   "a": "naganuma",
+   "b": "kitano",
+   "meters": 1235
+  },
+  {
+   "a": "kitano",
+   "b": "keiohachioji",
+   "meters": 2314
+  },
+  {
+   "a": "shinjuku",
+   "b": "hatsudai",
+   "meters": 1269
+  },
+  {
+   "a": "hatsudai",
+   "b": "hatagaya",
+   "meters": 1029
+  },
+  {
+   "a": "hatagaya",
+   "b": "sasazuka",
+   "meters": 998
+  },
+  {
+   "a": "chofu",
+   "b": "keiotamagawa",
+   "meters": 1243
+  },
+  {
+   "a": "keiotamagawa",
+   "b": "keioinadazutsumi",
+   "meters": 3248
+  },
+  {
+   "a": "keioinadazutsumi",
+   "b": "keioyomiuriland",
+   "meters": 1896
+  },
+  {
+   "a": "keioyomiuriland",
+   "b": "inagi",
+   "meters": 1973
+  },
+  {
+   "a": "inagi",
+   "b": "wakabadai",
+   "meters": 3784
+  },
+  {
+   "a": "wakabadai",
+   "b": "keionagayama",
+   "meters": 3760
+  },
+  {
+   "a": "keionagayama",
+   "b": "keiotamacenter",
+   "meters": 3217
+  },
+  {
+   "a": "keiotamacenter",
+   "b": "keiohorinouchi",
+   "meters": 2627
+  },
+  {
+   "a": "keiohorinouchi",
+   "b": "minamiosawa",
+   "meters": 2696
+  },
+  {
+   "a": "minamiosawa",
+   "b": "tamasakai",
+   "meters": 2179
+  },
+  {
+   "a": "tamasakai",
+   "b": "hashimoto",
+   "meters": 2544
+  },
+  {
+   "a": "kitano",
+   "b": "keiokatakura",
+   "meters": 1830
+  },
+  {
+   "a": "keiokatakura",
+   "b": "yamada",
+   "meters": 1699
+  },
+  {
+   "a": "yamada",
+   "b": "mejirodai",
+   "meters": 1669
+  },
+  {
+   "a": "mejirodai",
+   "b": "hazama",
+   "meters": 1945
+  },
+  {
+   "a": "hazama",
+   "b": "takao",
+   "meters": 1179
+  },
+  {
+   "a": "takao",
+   "b": "takaosanguchi",
+   "meters": 2060
+  },
+  {
+   "a": "higashifuchu",
+   "b": "fuchukeibaseimonmae",
+   "meters": 1335
+  },
+  {
+   "a": "takahatafudo",
+   "b": "tamadobutsukoen",
+   "meters": 1809
+  },
+  {
+   "a": "shibuya",
+   "b": "shinsen",
+   "meters": 738
+  },
+  {
+   "a": "shinsen",
+   "b": "komabatodaimae",
+   "meters": 1045
+  },
+  {
+   "a": "komabatodaimae",
+   "b": "ikenoue",
+   "meters": 1240
+  },
+  {
+   "a": "ikenoue",
+   "b": "shimokitazawa",
+   "meters": 663
+  },
+  {
+   "a": "shimokitazawa",
+   "b": "shindaita",
+   "meters": 687
+  },
+  {
+   "a": "shindaita",
+   "b": "higashimatsubara",
+   "meters": 450,
+   "minutes": 6,
+   "source": "Google Maps（2026-10-10 ユーザー確認）",
+   "osmMeters": 543
+  },
+  {
+   "a": "higashimatsubara",
+   "b": "meidaimae",
+   "meters": 900,
+   "minutes": 13,
+   "source": "Google Maps（2026-10-10 ユーザー確認）",
+   "osmMeters": 914
+  },
+  {
+   "a": "meidaimae",
+   "b": "eifukucho",
+   "meters": 1507
+  },
+  {
+   "a": "eifukucho",
+   "b": "nishieifuku",
+   "meters": 750,
+   "osmMeters": 782,
+   "minutes": 11,
+   "source": "Google Maps（2026-10-10 ユーザー確認）"
+  },
+  {
+   "a": "nishieifuku",
+   "b": "hamadayama",
+   "meters": 956
+  },
+  {
+   "a": "hamadayama",
+   "b": "takaido",
+   "meters": 1309
+  },
+  {
+   "a": "takaido",
+   "b": "fujimigaoka",
+   "meters": 836
+  },
+  {
+   "a": "fujimigaoka",
+   "b": "kugayama",
+   "meters": 958
+  },
+  {
+   "a": "kugayama",
+   "b": "mitakadai",
+   "meters": 1332
+  },
+  {
+   "a": "mitakadai",
+   "b": "inokashirakoen",
+   "meters": 904
+  },
+  {
+   "a": "inokashirakoen",
+   "b": "kichijoji",
+   "meters": 941
+  },
+  {
+   "a": "fuchukeibaseimonmae",
+   "b": "fuchu",
+   "meters": 650,
+   "minutes": 9,
+   "source": "Google Maps（2026-10-10 ユーザー確認）",
+   "osmMeters": 880
+  }
+ ]
+}

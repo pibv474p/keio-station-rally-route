@@ -22,11 +22,11 @@ import { parseArgs } from "@std/cli/parse-args";
 import type { Timetable } from "../src/model.ts";
 import { parseTime, toHM } from "../src/time.ts";
 import { cpuList, parseMask, popcount, setProcessAffinity } from "./affinity.ts";
-import { createSolver, type Result, type SolverConfig } from "./visit_core.ts";
+import { createSolver, type Result, type SolverConfig, WALK_FACTOR_DEFAULT } from "./visit_core.ts";
 import type { Reply, Request, Task } from "./visit_worker.ts";
 
 const args = parseArgs(Deno.args, {
-  string: ["data", "start", "exclude", "dwell", "time", "beam", "sweep", "xfer", "order", "json", "workers", "alphas", "branch", "affinity", "xfer-at", "platform-pen"],
+  string: ["data", "start", "exclude", "dwell", "time", "beam", "sweep", "xfer", "order", "json", "workers", "alphas", "branch", "affinity", "xfer-at", "platform-pen", "dwell-at", "xfer-reverse", "maybe-stop", "walk", "walk-speed", "walk-exit", "walk-factor"],
   boolean: ["allow-reserved", "quiet"],
   default: {
     data: "data/keio_network_holiday.json", start: "keiotamacenter", dwell: "3", time: "09:00", beam: "3000", xfer: "1",
@@ -44,6 +44,25 @@ const cfg: SolverConfig = {
   branch: Number(args.branch),
   alphas: args.alphas.split(",").map(Number),
   xferAt: Object.fromEntries(args["xfer-at"].split(",").filter(Boolean).map((kv) => {
+    const [k, v] = kv.split("=");
+    return [k.trim(), Number(v)];
+  })),
+  // 改札を出ない乗換で逆方向に乗る場合の追加時間（分）
+  xferReverseMin: Number(args["xfer-reverse"] ?? 3),
+  // 臨時停車の可能性がある駅（分）。例: --maybe-stop tobitakyu=1
+  maybeStop: Object.fromEntries((args["maybe-stop"] ?? "").split(",").filter(Boolean).map((kv) => {
+    const [k, v] = kv.split("=");
+    return [k.trim(), Number(v ?? 1)];
+  })),
+  // 徒歩で移動できる駅の組（例: --walk config/walk_keio.json）と歩く速さ（m/分）
+  walk: args.walk ? JSON.parse(await Deno.readTextFile(args.walk)).pairs : undefined,
+  walkSpeed: Number(args["walk-speed"] ?? 80),
+  // 歩行距離の補正係数（既定 1.03 = Google マップの実測8区間に合わせた値）。例: --walk-factor 0.9
+  walkFactor: Number(args["walk-factor"] ?? WALK_FACTOR_DEFAULT),
+  // 改札を出て歩き出すまで（分）。例: --walk-exit 1
+  walkExitMin: args["walk-exit"] === undefined ? undefined : Number(args["walk-exit"]),
+  // 駅ごとの滞在時間（分）。例: --dwell-at bubaigawara=6,kichijoji=8
+  dwellAt: Object.fromEntries((args["dwell-at"] ?? "").split(",").filter(Boolean).map((kv) => {
     const [k, v] = kv.split("=");
     return [k.trim(), Number(v)];
   })),
@@ -189,7 +208,7 @@ if (args.sweep) {
     if (args.json) {
       await Deno.writeTextFile(args.json, JSON.stringify({
         data: args.data, start: tt.stations[S.startSt].id, excluded: [...S.excluded].map((i) => tt.stations[i].id),
-        dwellMin: cfg.dwellMin, xferMin: cfg.xferMin, xferAt: cfg.xferAt, platformPenalty: cfg.platformPenalty, allowReserved: cfg.allowReserved,
+        dwellMin: cfg.dwellMin, xferMin: cfg.xferMin, xferAt: cfg.xferAt, platformPenalty: cfg.platformPenalty, dwellAt: cfg.dwellAt, xferReverseMin: cfg.xferReverseMin, maybeStop: cfg.maybeStop, walkSpeed: cfg.walk ? cfg.walkSpeed : undefined, walkFactor: cfg.walk ? cfg.walkFactor : undefined, allowReserved: cfg.allowReserved,
         t0, end: r.end, order: r.order.map((i) => tt.stations[i].id), legs: d.legs,
       }, null, 1) + "\n");
       console.log(`wrote ${args.json}`);

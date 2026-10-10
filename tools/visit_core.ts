@@ -4,6 +4,10 @@
 
 import type { Timetable } from "../src/model.ts";
 import { toHM } from "../src/time.ts";
+import { applyMaybeStop } from "./maybe_stop.ts";
+
+/** 歩行距離の補正係数の既定値。Google マップで確認した 8 区間（2026-10-10）から求めた */
+export const WALK_FACTOR_DEFAULT = 1.03;
 
 export interface SolverConfig {
   start: string;
@@ -21,6 +25,25 @@ export interface SolverConfig {
    * 例: 千歳烏山（北口＝上りホーム側）{ down: 3 }、柴崎（南口＝下りホーム側）{ up: 2 }
    */
   platformPenalty?: Record<string, { down?: number; up?: number }>;
+  /** 改札を出ない乗換で逆方向の列車に乗る場合の追加時間（分）。別ホームへ階段で渡る分。既定 3 */
+  xferReverseMin?: number;
+  /** 臨時停車の可能性がある駅（分）。通過列車はその先を指定分遅らせ、その列車での乗降はしない。例 { tobitakyu: 1 } */
+  maybeStop?: Record<string, number>;
+  /** 徒歩で移動できる駅の組（歩行距離 m）。改札を出た駅から歩き、着いた駅の改札で訪問できる */
+  walk?: { a: string; b: string; meters: number; minutes?: number }[];
+  /** 歩行距離にかける補正係数。既定 1.03（OSM 距離を分速 80m で割った時間を Google マップの徒歩時間 8 区間に合わせた値） */
+  walkFactor?: number;
+  /** 歩く速さ（m/分）。既定 80 */
+  walkSpeed?: number;
+  /**
+   * 改札を出て歩き出すまでの時間（分）。指定すると、歩き出しは「改札の出入り（dwellMin）を終えた時刻」ではなく
+   * 「着いてから walkExitMin 分後」になる（延長した滞在は含める）。未指定なら改札の出入りを終えてから歩き出す
+   */
+  walkExitMin?: number;
+  /** 歩いて着いた駅で、改札からホームまでにかかる時間（分）。既定 1 */
+  walkBoardMin?: number;
+  /** 駅ごとの滞在時間（分）。dwellMin を上書きする */
+  dwellAt?: Record<string, number>;
   alphas?: number[];
 }
 
@@ -38,9 +61,15 @@ const sid = (id: string) => {
   return i;
 };
 const name = (i: number) => tt.stations[i].name;
-const DWELL = cfg.dwellMin * 60;
+// 駅ごとの滞在時間（秒）。既定は dwellMin、dwellAt で駅ごとに上書き
+const DWELL_AT = new Float64Array(N).fill(cfg.dwellMin * 60);
+for (const [id, min] of Object.entries(cfg.dwellAt ?? {})) DWELL_AT[sid(id)] = min * 60;
+// 最後の駅で延ばした分の滞在（標準より長い分）。完了時刻はこれを足した時刻にする（長い滞在の駅を最後に回して得しないように）
+const EXTRA_END = (v: number) => Math.max(0, DWELL_AT[v] - cfg.dwellMin * 60);
 const XFER = new Array(N).fill(cfg.xferMin * 60);
 for (const [id, min] of Object.entries(cfg.xferAt ?? { shinjuku: 8 })) if (idx.has(id)) XFER[sid(id)] = min * 60;
+
+for (const [id, min] of Object.entries(cfg.maybeStop ?? {})) applyMaybeStop(tt, id, min * 60);
 
 // ---- 接続（隣り合う停車駅の間の 1 区間）。trip = 乗ったまま乗り通せる一続きの運行
 const byId = new Map(tt.trains.map((t) => [t.id, t]));
@@ -86,17 +115,64 @@ const lowerBound = (t: number) => {
 
 // ---- Connection Scan: src を t0 に出発できるとき、各駅の改札に着ける最早時刻（arrival）。
 // arrival は列車の到着にホームの追加時間を足したもの。src で乗る列車には乗る側の追加時間を課す
+// ready / readyConn は「駅 × 次に乗る方向」（index = 駅 * 2 + (上り ? 1 : 0)）。
+// 改札を出ない乗換で逆方向に乗るときは別ホームへ渡るので xferReverseMin を足す
 const WINDOW = 150 * 60;
-const ready = new Float64Array(N), arrival = new Float64Array(N);
-const arrConn = new Int32Array(N), readyConn = new Int32Array(N);
+const XFER_REV = (cfg.xferReverseMin ?? 3) * 60;
+const ready = new Float64Array(N * 2), arrival = new Float64Array(N);
+const arrConn = new Int32Array(N), readyConn = new Int32Array(N * 2);
+const RI = (st: number, up: boolean) => st * 2 + (up ? 1 : 0);
 let tripStamp = new Int32Array(nTrips), stamp = 0;
 let tripBoardConn = new Int32Array(nTrips);
+// 徒歩: 改札を出た駅（src）からだけ歩き出せる（途中の乗換駅で改札を出て歩くことはしない）。
+// 歩いて着いた駅は arrConn / readyConn に WALK を入れ、walkPrev / walkArr で道筋をたどる
+const WALK = -2;
+const WALK_BOARD = (cfg.walkBoardMin ?? 1) * 60;
+const WALK_MAX = 40 * 60;
+const walkAdj: [number, number][][] = Array.from({ length: N }, () => []);
+for (const w of cfg.walk ?? []) {
+  if (!idx.has(w.a) || !idx.has(w.b)) continue;
+  // 確認済みの所要時間（minutes）があればそれを使い、なければ距離×補正係数÷速さ（分単位に切り上げ）
+  const sec = (w.minutes ?? Math.ceil((w.meters * (cfg.walkFactor ?? WALK_FACTOR_DEFAULT)) / (cfg.walkSpeed ?? 80))) * 60;
+  walkAdj[sid(w.a)].push([sid(w.b), sec]);
+  walkAdj[sid(w.b)].push([sid(w.a), sec]);
+}
+const walkArr = new Float64Array(N), walkPrev = new Int32Array(N);
+let lastT0 = 0;
 function scan(src: number, t0: number) {
   ready.fill(Infinity);
   arrival.fill(Infinity);
   arrConn.fill(-1);
   readyConn.fill(-1);
-  ready[src] = t0;
+  ready[RI(src, false)] = t0;
+  ready[RI(src, true)] = t0;
+  lastT0 = t0;
+  if (cfg.walk?.length) {
+    // src から歩いて行ける駅（Dijkstra）。歩き出しは改札の出入りを終えた t0（控えめな見積もり）
+    walkArr.fill(Infinity);
+    walkPrev.fill(-1);
+    // 歩き出し: 入り直しの分（dwellMin − walkExitMin）だけ早く出られる
+    const save = cfg.walkExitMin === undefined ? 0 : Math.max(0, cfg.dwellMin - cfg.walkExitMin) * 60;
+    walkArr[src] = src === startSt ? t0 : t0 - save;
+    const q: number[] = [src];
+    while (q.length) {
+      q.sort((a, b) => walkArr[a] - walkArr[b]);
+      const u = q.shift()!;
+      for (const [v, sec] of walkAdj[u]) {
+        const t = walkArr[u] + sec;
+        if (t - walkArr[src] > WALK_MAX || t >= walkArr[v]) continue;
+        walkArr[v] = t;
+        walkPrev[v] = u;
+        q.push(v);
+      }
+    }
+    for (let v = 0; v < N; v++) {
+      if (v === src || walkArr[v] === Infinity) continue;
+      arrival[v] = walkArr[v];
+      arrConn[v] = WALK;
+      for (const up of [false, true]) (ready[RI(v, up)] = walkArr[v] + WALK_BOARD, readyConn[RI(v, up)] = WALK);
+    }
+  }
   stamp++;
   if (stamp === 2 ** 31 - 1) (tripStamp = new Int32Array(nTrips), stamp = 1);
   const end = t0 + WINDOW;
@@ -104,12 +180,14 @@ function scan(src: number, t0: number) {
     const c = conns[j];
     if (c.dep > end) break;
     const onTrip = tripStamp[c.trip] === stamp;
-    if (!onTrip && ready[c.from] + (c.from === src ? pen(src, c.up) : 0) > c.dep) continue;
+    if (!onTrip && ready[RI(c.from, c.up)] + (c.from === src ? pen(src, c.up) : 0) > c.dep) continue;
     if (!onTrip) (tripStamp[c.trip] = stamp, tripBoardConn[c.trip] = j);
     const gate = c.arr + pen(c.to, c.up);
     if (gate < arrival[c.to]) (arrival[c.to] = gate, arrConn[c.to] = j);
+    const same = RI(c.to, c.up), rev = RI(c.to, !c.up);
     const r = c.arr + XFER[c.to];
-    if (r < ready[c.to]) (ready[c.to] = r, readyConn[c.to] = j);
+    if (r < ready[same]) (ready[same] = r, readyConn[same] = j);
+    if (r + XFER_REV < ready[rev]) (ready[rev] = r + XFER_REV, readyConn[rev] = j);
   }
 }
 
@@ -119,13 +197,32 @@ function legsTo(v: number, src: number): Leg[] {
   const legs: Leg[] = [];
   let j = arrConn[v];
   let to = v;
+  const walkTo = (w: number) => {
+    // src から w までの徒歩区間を、駅ごとの区間にして積む（逆順）
+    for (let x = w; x !== src && walkPrev[x] >= 0; x = walkPrev[x]) {
+      const p = walkPrev[x];
+      legs.push({ from: p, dep: walkArr[p], to: x, arr: walkArr[x], train: "walk" });
+    }
+  };
+  if (j === WALK) (walkTo(v), j = -1);
   while (j >= 0) {
     const c = conns[j];
     const b = conns[tripBoardConn[c.trip]];
     legs.push({ from: b.from, dep: b.dep, to, arr: conns[j].arr, train: b.train });
     if (b.from === src) break;
     to = b.from;
-    j = readyConn[b.from];
+    j = readyConn[RI(b.from, b.up)];
+    if (j === WALK) {
+      // 歩いた先で乗った列車が src にも停まり、src から乗っても間に合うなら、歩かずに src から乗る（着く時刻は同じ）
+      const alt = conns.findIndex((c) => c.trip === b.trip && c.from === src && c.dep >= lastT0 + pen(src, c.up) && c.dep >= b.dep && c.dep < legs[legs.length - 1].arr);
+      if (alt >= 0) {
+        const last = legs[legs.length - 1];
+        legs[legs.length - 1] = { ...last, from: src, dep: conns[alt].dep, train: conns[alt].train };
+      } else {
+        walkTo(b.from);
+      }
+      j = -1;
+    }
   }
   return legs.reverse();
 }
@@ -248,7 +345,7 @@ function beam(t0: number, alpha: number): number[] | undefined {
         const a = w === 0 ? s.a | bit : s.a, b = w === 1 ? s.b | bit : s.b, c = w === 2 ? s.c | bit : s.c;
         const key = `${v}:${a}:${b}:${c}`;
         const old = next.get(key);
-        const ready = arrival[v] + DWELL;
+        const ready = arrival[v] + DWELL_AT[v];
         if (old && old.ready <= ready) continue;
         next.set(key, { at: v, a, b, c, ready, arrived: arrival[v], score: 0, parent: s });
       }
@@ -258,7 +355,7 @@ function beam(t0: number, alpha: number): number[] | undefined {
     layer = layer.sort((x, y) => x.score - y.score).slice(0, BEAM);
     if (!layer.length) return undefined;
   }
-  const best = layer.sort((x, y) => x.arrived - y.arrived)[0];
+  const best = layer.sort((x, y) => x.arrived + EXTRA_END(x.at) - (y.arrived + EXTRA_END(y.at)))[0];
   const order: number[] = [];
   for (let s: State | undefined = best; s?.parent; s = s.parent) order.push(s.at);
   return order.reverse();
@@ -272,9 +369,9 @@ function evalOrder(order: number[], t0: number, limit = Infinity): number {
     arr = arrival[v];
     if (arr === Infinity || arr >= limit) return Infinity;
     at = v;
-    ready = arr + DWELL;
+    ready = arr + DWELL_AT[v];
   }
-  return arr;
+  return arr + (order.length ? EXTRA_END(order[order.length - 1]) : 0);
 }
 
 /** 局所探索: 1〜3 駅の連続区間を別の位置へ移す / 区間を逆順にする。改善がなくなるまで */
@@ -330,8 +427,10 @@ function describe(order: number[], t0: number) {
     scan(at, ready);
     const legs = legsTo(v, at);
     legs.forEach((l, i) => {
-      const t = byId.get(l.train)!;
-      rides += l.arr - l.dep;
+      const t = l.train === "walk"
+        ? { direction: "", trainType: "徒歩", number: "" }
+        : byId.get(l.train)!;
+      if (l.train !== "walk") rides += l.arr - l.dep;
       legsN++;
       out.push({
         from: tt.stations[l.from].id, to: tt.stations[l.to].id, dep: l.dep, arr: l.arr, train: l.train,
@@ -339,11 +438,11 @@ function describe(order: number[], t0: number) {
       });
       const end = i === legs.length - 1 ? `  → 出場（${k + 1}駅目）` : "  （乗換）";
       lines.push(
-        `  ${toHM(l.dep)} ${name(l.from)} → ${toHM(l.arr)} ${name(l.to)}  [${t.direction === "down" ? "下り" : "上り"} ${t.trainType} ${t.number}]${end}`,
+        `  ${toHM(l.dep)} ${name(l.from)} → ${toHM(l.arr)} ${name(l.to)}  [${t.direction === "down" ? "下り " : t.direction === "up" ? "上り " : ""}${t.trainType}${t.number ? " " + t.number : ""}]${end}`,
       );
     });
     at = v;
-    ready = arrival[v] + DWELL;
+    ready = arrival[v] + DWELL_AT[v];
   });
   return { lines, rides, legsN, legs: out };
 }

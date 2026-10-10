@@ -54,6 +54,14 @@ deno run --allow-read --allow-write --allow-env tools/visit_network.ts --start k
   --exclude shinjuku,keioinadazutsumi,keiotamacenter --dwell 3 --time 08:45 --json out/keio_network_visit_all_0845.json
 # 同じ探索を P コア 4 個（各 1 スレッド）+ E コア 12 個に制限して並列実行（16 Worker、他の作業用に P コア 0〜3 を空ける）
 deno task visit --start keiotamacenter --exclude shinjuku,keioinadazutsumi,keiotamacenter --dwell 3 --sweep 06:00-11:00/15
+# 土休日の推奨オプション（現地で確認した前提）
+#   --xfer-reverse 3                              改札を出ない逆方向乗換は +3 分（既定）
+#   --platform-pen chitosekarasuyama=down:3,shibasaki=up:2   指定改札とつながっていないホームの追加時間
+#   --maybe-stop tobitakyu=1                      飛田給の臨時停車（味スタの催し）に備え、通過列車はその先を 1 分遅れ扱い
+#   --walk config/walk_keio.json --walk-exit 1    徒歩も選ぶ（電車を待つより早いときだけ）。改札を出て 1 分で歩き出す
+#   --walk-factor 1.03（既定）                     OSM の歩行距離の補正。Google マップで確認した区間は config の minutes を優先
+#   --dwell-at 駅=分,...                           駅ごとの滞在時間（最後の駅でも延長分は完了時刻に含める）
+#   --data data/keio_all_holiday_YYYY-MM-DD.json   当日の時刻表（東京競馬の開催日は競馬場線が増発）
 # 行程を路線網のダイヤグラムに重ねた HTML（線区ごとのパネル・共通の時刻軸）
 deno run --allow-read --allow-write tools/render_itinerary.ts out/keio_network_visit_all_0845.json
 ```

@@ -207,7 +207,7 @@
     {
       "id": "bubaigawara",
       "name": "分倍河原",
-      "km": 22.8,
+      "km": 23.1,
       "kind": 2,
       "refs": {
         "navitime": "8051"
@@ -216,7 +216,7 @@
     {
       "id": "nakagawara",
       "name": "中河原",
-      "km": 24.1,
+      "km": 24.7,
       "refs": {
         "navitime": "6032"
       }
@@ -233,7 +233,7 @@
     {
       "id": "mogusaen",
       "name": "百草園",
-      "km": 27.9,
+      "km": 28,
       "refs": {
         "navitime": "7813"
       }
@@ -250,7 +250,7 @@
     {
       "id": "minamidaira",
       "name": "南平",
-      "km": 31.4,
+      "km": 32.1,
       "refs": {
         "navitime": "7161"
       }
@@ -258,7 +258,7 @@
     {
       "id": "hirayamajoshikoen",
       "name": "平山城址公園",
-      "km": 32.4,
+      "km": 33.4,
       "refs": {
         "navitime": "8074"
       }
@@ -266,7 +266,7 @@
     {
       "id": "naganuma",
       "name": "長沼",
-      "km": 33.6,
+      "km": 34.9,
       "refs": {
         "navitime": "6230"
       }
@@ -274,7 +274,7 @@
     {
       "id": "kitano",
       "name": "北野",
-      "km": 34.9,
+      "km": 36.1,
       "kind": 2,
       "refs": {
         "navitime": "8408"
@@ -332,7 +332,7 @@
     {
       "id": "keionagayama",
       "name": "京王永山",
-      "km": 10.6,
+      "km": 11.4,
       "refs": {
         "navitime": "1708"
       }
@@ -340,7 +340,7 @@
     {
       "id": "keiotamacenter",
       "name": "京王多摩センター",
-      "km": 12.9,
+      "km": 13.7,
       "kind": 2,
       "refs": {
         "navitime": "1709"
@@ -349,7 +349,7 @@
     {
       "id": "keiohorinouchi",
       "name": "京王堀之内",
-      "km": 15.2,
+      "km": 16,
       "refs": {
         "navitime": "1713"
       }
@@ -357,7 +357,7 @@
     {
       "id": "minamiosawa",
       "name": "南大沢",
-      "km": 18,
+      "km": 18.2,
       "refs": {
         "navitime": "7130"
       }
@@ -365,7 +365,7 @@
     {
       "id": "tamasakai",
       "name": "多摩境",
-      "km": 19.8,
+      "km": 20.1,
       "refs": {
         "navitime": "5462"
       }
@@ -424,7 +424,7 @@
     {
       "id": "hazama",
       "name": "狭間",
-      "km": 5.6,
+      "km": 5.8,
       "refs": {
         "navitime": "1776"
       }
@@ -478,15 +478,15 @@
         { "stationId": "tamareien", "km": 19.6 },
         { "stationId": "higashifuchu", "km": 20.4 },
         { "stationId": "fuchu", "km": 21.9 },
-        { "stationId": "bubaigawara", "km": 22.8 },
-        { "stationId": "nakagawara", "km": 24.1 },
+        { "stationId": "bubaigawara", "km": 23.1 },
+        { "stationId": "nakagawara", "km": 24.7 },
         { "stationId": "seisekisakuragaoka", "km": 26.3 },
-        { "stationId": "mogusaen", "km": 27.9 },
+        { "stationId": "mogusaen", "km": 28 },
         { "stationId": "takahatafudo", "km": 29.7 },
-        { "stationId": "minamidaira", "km": 31.4 },
-        { "stationId": "hirayamajoshikoen", "km": 32.4 },
-        { "stationId": "naganuma", "km": 33.6 },
-        { "stationId": "kitano", "km": 34.9 },
+        { "stationId": "minamidaira", "km": 32.1 },
+        { "stationId": "hirayamajoshikoen", "km": 33.4 },
+        { "stationId": "naganuma", "km": 34.9 },
+        { "stationId": "kitano", "km": 36.1 },
         { "stationId": "keiohachioji", "km": 37.9 }
       ]
     },
@@ -516,11 +516,11 @@
         { "stationId": "keioyomiuriland", "km": 3.9 },
         { "stationId": "inagi", "km": 5.5 },
         { "stationId": "wakabadai", "km": 8.8 },
-        { "stationId": "keionagayama", "km": 10.6 },
-        { "stationId": "keiotamacenter", "km": 12.9 },
-        { "stationId": "keiohorinouchi", "km": 15.2 },
-        { "stationId": "minamiosawa", "km": 18 },
-        { "stationId": "tamasakai", "km": 19.8 },
+        { "stationId": "keionagayama", "km": 11.4 },
+        { "stationId": "keiotamacenter", "km": 13.7 },
+        { "stationId": "keiohorinouchi", "km": 16 },
+        { "stationId": "minamiosawa", "km": 18.2 },
+        { "stationId": "tamasakai", "km": 20.1 },
         { "stationId": "hashimoto", "km": 22.6 }
       ]
     },
@@ -535,7 +535,7 @@
         { "stationId": "keiokatakura", "km": 1.7 },
         { "stationId": "yamada", "km": 3.2 },
         { "stationId": "mejirodai", "km": 4.3 },
-        { "stationId": "hazama", "km": 5.6 },
+        { "stationId": "hazama", "km": 5.8 },
         { "stationId": "takao", "km": 6.9 },
         { "stationId": "takaosanguchi", "km": 8.6 }
       ]

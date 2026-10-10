@@ -9,6 +9,7 @@
 
 import type { Route, Timetable, Train } from "../src/model.ts";
 import { toHM } from "../src/time.ts";
+import { applyMaybeStop } from "./maybe_stop.ts";
 
 // --artifact: claude.ai Artifact 用（doctype/html/head/body なしの本文だけ。公開時に外枠が付く）
 const ARTIFACT = Deno.args.includes("--artifact");
@@ -19,11 +20,13 @@ const outPath = outArg ?? itPath.replace(/\.json$/, ".html");
 
 interface Leg { from: string; to: string; dep: number; arr: number; train: string; visit?: number }
 interface Itinerary {
-  data: string; start: string; excluded: string[]; dwellMin: number; xferMin: number; xferAt?: Record<string, number>; platformPenalty?: Record<string, { down?: number; up?: number }>;
+  data: string; start: string; excluded: string[]; dwellMin: number; xferMin: number; xferAt?: Record<string, number>; platformPenalty?: Record<string, { down?: number; up?: number }>; dwellAt?: Record<string, number>; maybeStop?: Record<string, number>; walkSpeed?: number;
   t0: number; end: number; order: string[]; legs: Leg[];
 }
 const it = JSON.parse(await Deno.readTextFile(itPath)) as Itinerary;
 const tt = JSON.parse(await Deno.readTextFile(it.data)) as Timetable;
+// 探索と同じく、臨時停車の可能性がある駅の先の時刻をずらす
+for (const [id, min] of Object.entries(it.maybeStop ?? {})) applyMaybeStop(tt, id, min * 60);
 const routes: Route[] = tt.routes ?? [{ id: "line", name: tt.line.name, stations: tt.stations.map((s) => ({ stationId: s.id, km: s.km })) }];
 const stName = new Map(tt.stations.map((s) => [s.id, s.name.replace(/（.*）$/, "")]));
 const byId = new Map(tt.trains.map((t) => [t.id, t]));
@@ -117,6 +120,7 @@ for (const t of tt.trains) {
 // ---- 行程
 /** leg の乗車区間の停車点（乗ったまま続く next もたどる） */
 function legPoints(l: Leg): { s: string; t: number }[] {
+  if (l.train === "walk") return [{ s: l.from, t: l.dep }, { s: l.to, t: l.arr }];
   const pts: { s: string; t: number }[] = [];
   let tr: Train | undefined = byId.get(l.train);
   let started = false;
@@ -138,7 +142,8 @@ const ride: string[] = [], stay: string[] = [], marks: string[] = [];
 let prevArr = it.t0, prevSt = it.start, prevVisit: number | undefined;
 const rows: string[] = [];
 it.legs.forEach((l, i) => {
-  const t = byId.get(l.train)!;
+  const walking = l.train === "walk";
+  const t = walking ? { trainType: "徒歩", number: "" } as Train : byId.get(l.train)!;
   const label = `${toHM(l.dep)} ${stName.get(l.from)} → ${toHM(l.arr)} ${stName.get(l.to)}　${t.trainType} ${t.number}`;
   // 駅にいた時間（前の到着 → この出発）
   for (const p of panelsWith(prevSt)) {
@@ -153,7 +158,7 @@ it.legs.forEach((l, i) => {
       ds.push(`M${f1(x(pts[k].t))} ${f1(Y(p, pts[k].s))}L${f1(x(pts[k + 1].t))} ${f1(Y(p, pts[k + 1].s))}`);
     }
   }
-  ride.push(`<g class="leg"><path class="halo" d="${ds.join("")}"/><path class="ride" d="${ds.join("")}"><title>${esc(label)}</title></path></g>`);
+  ride.push(`<g class="leg${walking ? " walk" : ""}"><path class="halo" d="${ds.join("")}"/><path class="ride" d="${ds.join("")}"><title>${esc(label)}</title></path></g>`);
   for (const p of panelsWith(l.to)) {
     const cx = f1(x(l.arr)), cy = f1(Y(p, l.to));
     if (l.visit) {
@@ -161,11 +166,12 @@ it.legs.forEach((l, i) => {
         `<g class="visit"><circle cx="${cx}" cy="${cy}" r="7.5"/><text x="${cx}" y="${cy}">${l.visit}</text><title>${esc(`${l.visit}駅目 ${stName.get(l.to)} 着 ${toHM(l.arr)}`)}</title></g>`,
       );
     } else {
+      if (walking && it.legs[i + 1]?.train === "walk") continue; // 歩いて通り過ぎるだけの駅
       marks.push(`<circle class="xfer" cx="${cx}" cy="${cy}" r="3.5"><title>${esc(`乗換 ${stName.get(l.to)} ${toHM(l.arr)}`)}</title></circle>`);
     }
   }
   rows.push(
-    `<tr${l.visit ? "" : ' class="x"'}><td>${i + 1}</td><td>${toHM(l.dep)}</td><td>${esc(stName.get(l.from)!)}</td><td>${toHM(l.arr)}</td><td>${esc(stName.get(l.to)!)}</td><td><span class="sw t${Math.max(0, TYPE_ORDER.indexOf(t.trainType ?? ""))}"></span>${esc(`${t.trainType} ${t.number}`)}</td><td>${l.visit ? `<b>${l.visit}駅目</b>` : "乗換"}</td></tr>`,
+    `<tr${l.visit ? "" : ' class="x"'}><td>${i + 1}</td><td>${toHM(l.dep)}</td><td>${esc(stName.get(l.from)!)}</td><td>${toHM(l.arr)}</td><td>${esc(stName.get(l.to)!)}</td><td><span class="sw t${Math.max(0, TYPE_ORDER.indexOf(t.trainType ?? ""))}"></span>${esc(`${t.trainType} ${t.number}`)}</td><td>${l.visit ? `<b>${l.visit}駅目</b>` : walking ? "通過" : "乗換"}</td></tr>`,
   );
   prevArr = l.arr;
   prevSt = l.to;
@@ -269,6 +275,7 @@ svg { display: block; }
 .leg path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .leg .halo { stroke: var(--halo); stroke-width: 6; }
 .leg .ride { stroke: var(--accent); stroke-width: 3; }
+.leg.walk .ride { stroke: var(--t3); stroke-dasharray: 5 3; }
 .leg:hover .ride { stroke-width: 4.5; }
 .dwell { stroke: var(--accent-soft); stroke-width: 6; stroke-linecap: round; }
 .wait { stroke: var(--wait); stroke-width: 1.6; stroke-dasharray: 3 2; }
@@ -321,6 +328,7 @@ const body = `
   <span class="lg"><i class="r"></i>乗車した列車</span>
   <span class="lg"><i class="d"></i>改札を出て駅にいる時間</span>
   <span class="lg"><i class="w"></i>乗換の待ち</span>
+  ${it.walkSpeed ? `<span class="lg"><i style="border-top:3px dashed var(--t3)"></i>徒歩（分速${it.walkSpeed}m）</span>` : ""}
   <span class="lg"><em>1</em>下車順</span>
   <span class="lg"><i style="border-color:var(--t0)"></i>各停</span>
   <span class="lg"><i style="border-color:var(--t1)"></i>区間急行</span>
@@ -348,7 +356,7 @@ const body = `
 <summary>乗車の一覧（${it.legs.length}回）</summary>
 <div class="tbl"><table><tbody>${rows.join("")}</tbody></table></div>
 </details>
-<p class="note">条件: 改札の出入り ${it.dwellMin} 分、改札を出ない乗換 ${it.xferMin} 分（${Object.entries(it.xferAt ?? { shinjuku: 8 }).map(([s, m]) => `${stName.get(s)} ${m} 分`).join("、")}）${Object.keys(it.platformPenalty ?? {}).length ? `、指定改札とつながっていないホームは追加時間（${Object.entries(it.platformPenalty!).map(([s, v]) => `${stName.get(s)} ${v.down ? `下り +${v.down}` : ""}${v.up ? `上り +${v.up}` : ""} 分`).join("、")}）` : ""}、座席指定が必要な区間は使わない。時刻は NAVITIME（京王電鉄 公式時刻表）の ${tt.service.sampleDate} のダイヤ。探索は近似（ビームサーチ＋局所探索）で、最短の保証はない。</p>
+<p class="note">条件: 改札の出入り ${it.dwellMin} 分${Object.keys(it.dwellAt ?? {}).length ? `（${Object.entries(it.dwellAt!).map(([s, m]) => `${stName.get(s)} ${m} 分`).join("、")}）` : ""}、改札を出ない乗換 ${it.xferMin} 分（${Object.entries(it.xferAt ?? { shinjuku: 8 }).map(([s, m]) => `${stName.get(s)} ${m} 分`).join("、")}）${Object.keys(it.platformPenalty ?? {}).length ? `、指定改札とつながっていないホームは追加時間（${Object.entries(it.platformPenalty!).map(([s, v]) => `${stName.get(s)} ${v.down ? `下り +${v.down}` : ""}${v.up ? `上り +${v.up}` : ""} 分`).join("、")}）` : ""}${Object.keys(it.maybeStop ?? {}).length ? `、${Object.entries(it.maybeStop!).map(([s, m]) => `${stName.get(s)}を通過する列車は臨時停車に備えて ${m} 分遅れで計算`).join("、")}` : ""}、座席指定が必要な区間は使わない。時刻は NAVITIME（京王電鉄 公式時刻表）の ${tt.service.sampleDate} のダイヤ。探索は近似（ビームサーチ＋局所探索）で、最短の保証はない。</p>
 </main>
 <script>
 document.getElementById("dim").addEventListener("change", (e) => document.getElementById("bg").classList.toggle("dim", e.target.checked));

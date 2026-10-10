@@ -3,29 +3,32 @@
   "name": "京王井の頭線",
   "operator": "京王電鉄",
   "stations": [
-    { "id": "shibuya", "name": "渋谷", "km": 0.0, "kind": 3, "refs": { "navitime": "3544" } },
+    { "id": "shibuya", "name": "渋谷", "km": 0, "kind": 3, "refs": { "navitime": "3544" } },
     { "id": "shinsen", "name": "神泉", "km": 0.5, "refs": { "navitime": "4450" } },
     { "id": "komabatodaimae", "name": "駒場東大前", "km": 1.4, "refs": { "navitime": "1942" } },
     { "id": "ikenoue", "name": "池ノ上", "km": 2.4, "refs": { "navitime": "5939" } },
-    { "id": "shimokitazawa", "name": "下北沢", "km": 3.0, "kind": 2, "refs": { "navitime": "997" } },
+    { "id": "shimokitazawa", "name": "下北沢", "km": 3, "kind": 2, "refs": { "navitime": "997" } },
     { "id": "shindaita", "name": "新代田", "km": 3.5, "refs": { "navitime": "4300" } },
-    { "id": "higashimatsubara", "name": "東松原", "km": 4.0, "refs": { "navitime": "6725" } },
+    { "id": "higashimatsubara", "name": "東松原", "km": 4, "refs": { "navitime": "6725" } },
     { "id": "meidaimae", "name": "明大前", "km": 4.9, "kind": 2, "refs": { "navitime": "8602" } },
-    { "id": "eifukucho", "name": "永福町", "km": 6.0, "kind": 2, "refs": { "navitime": "667" } },
+    { "id": "eifukucho", "name": "永福町", "km": 6, "kind": 2, "refs": { "navitime": "667" } },
     { "id": "nishieifuku", "name": "西永福", "km": 6.7, "refs": { "navitime": "4718" } },
     { "id": "hamadayama", "name": "浜田山", "km": 7.5, "refs": { "navitime": "7851" } },
     { "id": "takaido", "name": "高井戸", "km": 8.7, "refs": { "navitime": "2537" } },
     { "id": "fujimigaoka", "name": "富士見ヶ丘", "km": 9.4, "kind": 2, "refs": { "navitime": "7883" } },
     { "id": "kugayama", "name": "久我山", "km": 10.2, "kind": 2, "refs": { "navitime": "1597" } },
-    { "id": "mitakadai", "name": "三鷹台", "km": 11.0, "refs": { "navitime": "3041" } },
-    { "id": "inokashirakoen", "name": "井の頭公園", "km": 11.9, "refs": { "navitime": "413" } },
+    { "id": "mitakadai", "name": "三鷹台", "km": 11.2, "refs": { "navitime": "3041" } },
+    { "id": "inokashirakoen", "name": "井の頭公園", "km": 12.1, "refs": { "navitime": "413" } },
     { "id": "kichijoji", "name": "吉祥寺", "km": 12.7, "kind": 3, "refs": { "navitime": "1556" } }
   ],
   "sources": {
     "navitime": {
       "company": "keio",
       "lineId": "7",
-      "directionParam": { "down": "1", "up": "0" }
+      "directionParam": {
+        "down": "1",
+        "up": "0"
+      }
     }
   }
 }
