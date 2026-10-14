@@ -52,6 +52,15 @@ export interface Result {
   end: number;
 }
 
+/** 計測値（--stats）。solver（Worker）ごとに積算する */
+export interface SolverStats {
+  /** scan() の呼び出し回数（呼び出し元ごと） */
+  scan: { beam: number; improve: number; eval: number; describe: number };
+  /** 経過時間（ms）。eval は improve の外で呼ばれた evalOrder（refine の種の評価など） */
+  ms: { beam: number; improve: number; eval: number };
+  calls: { beam: number; improve: number };
+}
+
 export function createSolver(tt: Timetable, cfg: SolverConfig) {
 const N = tt.stations.length;
 const idx = new Map(tt.stations.map((s, i) => [s.id, i]));
@@ -139,7 +148,15 @@ for (const w of cfg.walk ?? []) {
 }
 const walkArr = new Float64Array(N), walkPrev = new Int32Array(N);
 let lastT0 = 0;
+// ---- 計測（--stats）。phase は scan() の呼び出し元
+const stats: SolverStats = {
+  scan: { beam: 0, improve: 0, eval: 0, describe: 0 },
+  ms: { beam: 0, improve: 0, eval: 0 },
+  calls: { beam: 0, improve: 0 },
+};
+let phase: keyof SolverStats["scan"] = "eval";
 function scan(src: number, t0: number) {
+  stats.scan[phase]++;
   ready.fill(Infinity);
   arrival.fill(Infinity);
   arrConn.fill(-1);
@@ -331,6 +348,17 @@ interface State { at: number; a: number; b: number; c: number; ready: number; ar
 
 /** ビームサーチ。alpha = 残り移動の見積もりの重み。訪問順（駅 index の配列）を返す */
 function beam(t0: number, alpha: number): number[] | undefined {
+  const t1 = performance.now(), saved = phase;
+  phase = "beam";
+  stats.calls.beam++;
+  try {
+    return beamBody(t0, alpha);
+  } finally {
+    stats.ms.beam += performance.now() - t1;
+    phase = saved;
+  }
+}
+function beamBody(t0: number, alpha: number): number[] | undefined {
   let layer: State[] = [{ at: startSt, a: 0, b: 0, c: 0, ready: t0, arrived: t0, score: 0 }];
   const cand: number[] = [];
   for (let step = 0; step < T; step++) {
@@ -363,6 +391,15 @@ function beam(t0: number, alpha: number): number[] | undefined {
 
 /** 訪問順どおりに回ったときの完了時刻（各駅へは最早到着、着いたら滞在して次へ） */
 function evalOrder(order: number[], t0: number, limit = Infinity): number {
+  if (phase !== "eval") return evalOrderBody(order, t0, limit);
+  const t1 = performance.now();
+  try {
+    return evalOrderBody(order, t0, limit);
+  } finally {
+    stats.ms.eval += performance.now() - t1;
+  }
+}
+function evalOrderBody(order: number[], t0: number, limit: number): number {
   let at = startSt, ready = t0, arr = t0;
   for (const v of order) {
     scan(at, ready);
@@ -376,6 +413,17 @@ function evalOrder(order: number[], t0: number, limit = Infinity): number {
 
 /** 局所探索: 1〜3 駅の連続区間を別の位置へ移す / 区間を逆順にする。改善がなくなるまで */
 function improve(order: number[], t0: number): { order: number[]; end: number } {
+  const t1 = performance.now(), saved = phase;
+  phase = "improve";
+  stats.calls.improve++;
+  try {
+    return improveBody(order, t0);
+  } finally {
+    stats.ms.improve += performance.now() - t1;
+    phase = saved;
+  }
+}
+function improveBody(order: number[], t0: number): { order: number[]; end: number } {
   let best = order.slice(), bestEnd = evalOrder(best, t0);
   for (let improved = true; improved;) {
     improved = false;
@@ -420,6 +468,15 @@ function solve(t0: number, seeds: number[][] = []): { order: number[]; end: numb
 }
 
 function describe(order: number[], t0: number) {
+  const saved = phase;
+  phase = "describe";
+  try {
+    return describeBody(order, t0);
+  } finally {
+    phase = saved;
+  }
+}
+function describeBody(order: number[], t0: number) {
   const lines = [`${toHM(t0)} ${name(startSt)} 入場`];
   let rides = 0, legsN = 0, at = startSt, ready = t0;
   const out: { from: string; to: string; dep: number; arr: number; train: string; visit?: number }[] = [];
@@ -447,7 +504,9 @@ function describe(order: number[], t0: number) {
   return { lines, rides, legsN, legs: out };
 }
 
-  return { tt, N, T, name, sid, startSt, excluded, targets, BEAM, ALPHAS, beam, evalOrder, improve, solve, describe };
+  /** 計測値のコピー（--stats） */
+  const getStats = (): SolverStats => structuredClone(stats);
+  return { tt, N, T, name, sid, startSt, excluded, targets, BEAM, ALPHAS, beam, evalOrder, improve, solve, describe, getStats };
 }
 
 export type Solver = ReturnType<typeof createSolver>;

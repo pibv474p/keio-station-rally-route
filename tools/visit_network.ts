@@ -6,6 +6,7 @@
 //   --dwell 3 --time 09:00 [--beam 3000] [--allow-reserved] [--sweep 07:00-10:00/30] [--workers 8]
 //   [--order "駅名,…"（探索せずその順で評価）] [--json 行程.json] [--quiet]
 //   [--affinity 0xFFF5500（使う論理プロセッサ。--allow-ffi が必要。Worker 数の既定はその数）]
+//   [--stats（Worker ごとの scan 回数・時間を stderr に出す。--sweep では開始時刻ごとの訪問順も出す）]
 //   よく使う設定は deno task visit（P コア 4 個 + E コア 12 個に制限）
 //
 // - 各訪問駅では到着後 dwell 分で改札を出て入り直し、次の列車に乗れる（最後の駅は到着時刻で終了）
@@ -22,12 +23,12 @@ import { parseArgs } from "@std/cli/parse-args";
 import type { Timetable } from "../src/model.ts";
 import { parseTime, toHM } from "../src/time.ts";
 import { cpuList, parseMask, popcount, setProcessAffinity } from "./affinity.ts";
-import { createSolver, type Result, type SolverConfig, WALK_FACTOR_DEFAULT } from "./visit_core.ts";
+import { createSolver, type Result, type SolverConfig, type SolverStats, WALK_FACTOR_DEFAULT } from "./visit_core.ts";
 import type { Reply, Request, Task } from "./visit_worker.ts";
 
 const args = parseArgs(Deno.args, {
   string: ["data", "start", "exclude", "dwell", "time", "beam", "sweep", "xfer", "order", "json", "workers", "alphas", "branch", "affinity", "xfer-at", "platform-pen", "dwell-at", "xfer-reverse", "maybe-stop", "walk", "walk-speed", "walk-exit", "walk-factor"],
-  boolean: ["allow-reserved", "quiet"],
+  boolean: ["allow-reserved", "quiet", "stats"],
   default: {
     data: "data/keio_network_holiday.json", start: "keiotamacenter", dwell: "3", time: "09:00", beam: "3000", xfer: "1",
     exclude: "", alphas: "0.8,1,1.2,1.5,2", branch: "10", "xfer-at": "shinjuku=8,meidaimae=3",
@@ -88,7 +89,8 @@ class Pool {
   #workers: Worker[] = [];
   #idle: Worker[] = [];
   #queue: { req: Request; resolve: (r: Result | null) => void; reject: (e: Error) => void }[] = [];
-  #pending = new Map<number, { resolve: (r: Result | null) => void; reject: (e: Error) => void }>();
+  // deno-lint-ignore no-explicit-any
+  #pending = new Map<number, { resolve: (r: any) => void; reject: (e: Error) => void }>();
   #nextId = 0;
 
   static async create(size: number, data: string, cfg: SolverConfig): Promise<Pool> {
@@ -107,7 +109,8 @@ class Pool {
     return pool;
   }
 
-  #send(w: Worker, req: Request): Promise<Result | null> {
+  // deno-lint-ignore no-explicit-any
+  #send(w: Worker, req: Request): Promise<any> {
     return new Promise((resolve, reject) => {
       this.#pending.set(req.id, { resolve, reject });
       w.postMessage(req);
@@ -118,7 +121,7 @@ class Pool {
     const p = this.#pending.get(rep.id);
     this.#pending.delete(rep.id);
     if (rep.error) p?.reject(new Error(rep.error));
-    else p?.resolve(rep.result ?? null);
+    else p?.resolve(rep.stats ?? rep.result ?? null);
     const next = this.#queue.shift();
     if (next) this.#send(w, next.req).then(next.resolve, next.reject);
     else this.#idle.push(w);
@@ -129,6 +132,11 @@ class Pool {
     const w = this.#idle.pop();
     if (w) return this.#send(w, req);
     return new Promise((resolve, reject) => this.#queue.push({ req, resolve, reject }));
+  }
+
+  /** 全 Worker の計測値（タスクがすべて終わってから呼ぶ） */
+  stats(): Promise<SolverStats[]> {
+    return Promise.all(this.#workers.map((w) => this.#send(w, { id: this.#nextId++, stats: true })));
   }
 
   close() {
@@ -146,6 +154,29 @@ function printItinerary(order: number[], t0: number) {
   console.log(d.lines.join("\n"));
   console.log(`乗車 ${fmtDur(d.rides)}・乗車回数 ${d.legsN}・改札 ${S.T - 1}回×${cfg.dwellMin}分`);
   return d;
+}
+
+/** --stats: Worker ごとの計測値を stderr に出す */
+function printStats(list: SolverStats[]) {
+  const n = (x: number) => x.toLocaleString("en-US");
+  const s = (ms: number) => `${(ms / 1000).toFixed(1)}s`;
+  const sum: SolverStats = {
+    scan: { beam: 0, improve: 0, eval: 0, describe: 0 },
+    ms: { beam: 0, improve: 0, eval: 0 },
+    calls: { beam: 0, improve: 0 },
+  };
+  const line = (label: string, x: SolverStats) => {
+    const total = x.scan.beam + x.scan.improve + x.scan.eval + x.scan.describe;
+    return `${label} scan ${n(total)}（beam ${n(x.scan.beam)} / improve ${n(x.scan.improve)} / eval ${n(x.scan.eval)}）` +
+      `  beam ${s(x.ms.beam)}×${x.calls.beam}  improve ${s(x.ms.improve)}×${x.calls.improve}  eval ${s(x.ms.eval)}`;
+  };
+  list.forEach((x, i) => {
+    console.error(line(`[stats] W${String(i).padStart(2, "0")}`, x));
+    for (const g of ["scan", "ms", "calls"] as const) {
+      for (const k of Object.keys(x[g]) as (keyof typeof x[typeof g])[]) (sum[g] as Record<string, number>)[k] += (x[g] as Record<string, number>)[k];
+    }
+  });
+  console.error(line("[stats] 合計", sum));
 }
 
 const tStart = performance.now();
@@ -172,6 +203,10 @@ if (args.sweep) {
     for (const { t, r } of results) {
       console.log(`${toHM(t)} 入場 → ${r ? `${toHM(r.end)} 完了（${fmtDur(r.end - t)}）` : "到達不能"}`);
     }
+    if (args.stats) {
+      for (const { t, r } of results) console.error(`[stats] ${toHM(t)} ${r ? toHM(r.end) : "-"} ${r ? r.order.map(S.name).join(",") : ""}`);
+      printStats(await pool.stats());
+    }
     const top = results.filter((x) => x.r).reduce((a, b) => (b.r!.end - b.t < a.r!.end - a.t ? b : a));
     console.log(`\n最短: ${toHM(top.t)} 入場 → ${toHM(top.r!.end)} 完了（${fmtDur(top.r!.end - top.t)}）`);
     printItinerary(top.r!.order, top.t);
@@ -189,11 +224,13 @@ if (args.sweep) {
       return i;
     });
     r = { order, end: S.evalOrder(order, t0) };
+    if (args.stats) printStats([S.getStats()]);
   } else {
     const alphas = cfg.alphas!;
     const pool = await Pool.create(poolSize(alphas.length), args.data, cfg);
     try {
       r = (await Promise.all(alphas.map((alpha) => pool.run({ kind: "beam", t0, alpha })))).reduce(better, null);
+      if (args.stats) printStats(await pool.stats());
     } finally {
       pool.close();
     }

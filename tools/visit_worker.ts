@@ -2,7 +2,7 @@
 
 /// <reference lib="deno.worker" />
 import type { Timetable } from "../src/model.ts";
-import { createSolver, type Solver, type SolverConfig } from "./visit_core.ts";
+import { createSolver, type Solver, type SolverConfig, type SolverStats } from "./visit_core.ts";
 
 export type Task =
   /** 重み alpha でビームサーチ → 局所探索 */
@@ -10,8 +10,12 @@ export type Task =
   /** 種の訪問順のうち一番早いものを局所探索 */
   | { kind: "refine"; t0: number; seeds: number[][] };
 
-export type Request = { id: number; init: { data: string; cfg: SolverConfig } } | { id: number; task: Task };
-export type Reply = { id: number; result?: { order: number[]; end: number } | null; error?: string };
+export type Request =
+  | { id: number; init: { data: string; cfg: SolverConfig } }
+  | { id: number; task: Task }
+  /** 計測値の問い合わせ（--stats） */
+  | { id: number; stats: true };
+export type Reply = { id: number; result?: { order: number[]; end: number } | null; stats?: SolverStats; error?: string };
 
 let solver: Solver | undefined;
 
@@ -25,6 +29,10 @@ self.onmessage = async (e: MessageEvent<Request>) => {
       return;
     }
     if (!solver) throw new Error("worker not initialized");
+    if ("stats" in msg) {
+      self.postMessage({ id: msg.id, stats: solver.getStats() } satisfies Reply);
+      return;
+    }
     const task = msg.task;
     let result: { order: number[]; end: number } | null = null;
     if (task.kind === "beam") {
