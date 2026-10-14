@@ -89,3 +89,12 @@ deno run --allow-read --allow-write tools/render_itinerary.ts out/keio_network_v
 2. `config/lines/<line>.json` の各駅の `refs` に `odpt`（odpt:Station の ID）/ `gtfs`（stop_id）を追加し、`sources.odpt` などに必要なパラメータを書く
 3. API キーは環境変数から読む（config やコードに書かない）
 4. 同じ路線の navitime 版と発着時刻が一致するかを比べるテストを追加
+
+## スマホ用の再計算画面（web/replan）
+「今いる駅・今の時刻・訪問済みの駅」から残りのルートを端末内（Web Worker）で計算し直すページ。探索の本体は tools/visit_core.ts をそのまま使う。
+```bash
+bash web/replan/build.sh   # out/replan/ に index.html・worker.js・data/{regular,race,walk}.json を組み立てる
+```
+out/replan/index.html を claude.ai の Artifact として公開し、worker.js と data/*.json を同じ Artifact のファイルとして載せる（capabilities: db）。
+訪問記録は Artifact の db（rally/state）と端末の localStorage に保存する。時刻表データは再配布しないこと（非公開ページで使う）。
+
