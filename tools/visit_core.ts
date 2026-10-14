@@ -437,6 +437,51 @@ function evalOrderBody(order: number[], t0: number, limit: number): number {
   return arr + (order.length ? EXTRA_END(order[order.length - 1]) : 0);
 }
 
+/**
+ * 最良解の各位置での状態。at[k] / ready[k] = order[k] を訪ねる直前の (現在駅, 次に乗れる時刻)。
+ * k = 0 は (startSt, t0)。end は evalOrder(order, t0) と同じ完了時刻
+ */
+interface Prefix { at: Int32Array; ready: Float64Array; maxArr: Float64Array; end: number }
+function buildPrefix(order: number[], t0: number): Prefix {
+  const at = new Int32Array(order.length + 1), ready = new Float64Array(order.length + 1);
+  // maxArr[k] = order[0..k) の到着時刻の最大値（limit 打ち切りの判定用）
+  const maxArr = new Float64Array(order.length + 1).fill(-Infinity);
+  at[0] = startSt;
+  ready[0] = t0;
+  let arr = t0;
+  for (let k = 0; k < order.length; k++) {
+    const v = order[k];
+    arr = scanArrival(at[k], ready[k])[v];
+    if (arr === Infinity) {
+      // 到達不能（evalOrder と同じく Infinity）。以降の状態は使わない
+      for (let m = k + 1; m <= order.length; m++) (at[m] = v, ready[m] = Infinity, maxArr[m] = Infinity);
+      return { at, ready, maxArr, end: Infinity };
+    }
+    at[k + 1] = v;
+    ready[k + 1] = arr + DWELL_AT[v];
+    maxArr[k + 1] = Math.max(maxArr[k], arr);
+  }
+  return { at, ready, maxArr, end: arr + (order.length ? EXTRA_END(order[order.length - 1]) : 0) };
+}
+
+/**
+ * cand を位置 from から評価する（cand[0..from) は最良解と同じで、その状態は pre に入っている）。
+ * evalOrder(cand, t0, limit) と同じ値を返す。先頭部分で limit 打ち切りが起きるかは maxArr で判定する
+ * （通常は先頭部分の到着時刻は最良解の完了時刻より前なので起きない）
+ */
+function evalOrderFrom(cand: number[], from: number, pre: Prefix, limit: number): number {
+  let at = pre.at[from], ready = pre.ready[from], arr = 0;
+  if (ready === Infinity || pre.maxArr[from] >= limit) return Infinity;
+  for (let k = from; k < cand.length; k++) {
+    const v = cand[k];
+    arr = scanArrival(at, ready)[v];
+    if (arr === Infinity || arr >= limit) return Infinity;
+    at = v;
+    ready = arr + DWELL_AT[v];
+  }
+  return arr + EXTRA_END(cand[cand.length - 1]);
+}
+
 /** 局所探索: 1〜3 駅の連続区間を別の位置へ移す / 区間を逆順にする。改善がなくなるまで */
 function improve(order: number[], t0: number): { order: number[]; end: number } {
   const t1 = performance.now(), saved = phase;
@@ -450,7 +495,8 @@ function improve(order: number[], t0: number): { order: number[]; end: number } 
   }
 }
 function improveBody(order: number[], t0: number): { order: number[]; end: number } {
-  let best = order.slice(), bestEnd = evalOrder(best, t0);
+  let best = order.slice();
+  let pre = buildPrefix(best, t0), bestEnd = pre.end;
   for (let improved = true; improved;) {
     improved = false;
     // 区間の移動（or-opt）
@@ -461,8 +507,8 @@ function improveBody(order: number[], t0: number): { order: number[]; end: numbe
           if (j === i) continue;
           for (const s of [seg, [...seg].reverse()]) {
             const cand = [...rest.slice(0, j), ...s, ...rest.slice(j)];
-            const end = evalOrder(cand, t0, bestEnd);
-            if (end < bestEnd) (best = cand, bestEnd = end, improved = true);
+            const end = evalOrderFrom(cand, Math.min(i, j), pre, bestEnd);
+            if (end < bestEnd) (best = cand, bestEnd = end, improved = true, pre = buildPrefix(best, t0));
             if (improved || len === 1) break;
           }
         }
@@ -472,8 +518,8 @@ function improveBody(order: number[], t0: number): { order: number[]; end: numbe
     for (let i = 0; i < best.length - 1 && !improved; i++) {
       for (let j = i + 2; j <= best.length && !improved; j++) {
         const cand = [...best.slice(0, i), ...best.slice(i, j).reverse(), ...best.slice(j)];
-        const end = evalOrder(cand, t0, bestEnd);
-        if (end < bestEnd) (best = cand, bestEnd = end, improved = true);
+        const end = evalOrderFrom(cand, i, pre, bestEnd);
+        if (end < bestEnd) (best = cand, bestEnd = end, improved = true, pre = buildPrefix(best, t0));
       }
     }
   }

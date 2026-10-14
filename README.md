@@ -62,6 +62,7 @@ deno task visit --start keiotamacenter --exclude shinjuku,keioinadazutsumi,keiot
 #   --walk-factor 1.03（既定）                     OSM の歩行距離の補正。Google マップで確認した区間は config の minutes を優先
 #   --dwell-at 駅=分,...                           駅ごとの滞在時間（最後の駅でも延長分は完了時刻に含める）
 #   --data data/keio_all_holiday_YYYY-MM-DD.json   当日の時刻表（東京競馬の開催日は競馬場線が増発）
+# --stats を付けると Worker ごとの scan 回数・beam / improve の時間・キャッシュのヒット率を stderr に出す
 # 行程を路線網のダイヤグラムに重ねた HTML（線区ごとのパネル・共通の時刻軸）
 deno run --allow-read --allow-write tools/render_itinerary.ts out/keio_network_visit_all_0845.json
 ```
