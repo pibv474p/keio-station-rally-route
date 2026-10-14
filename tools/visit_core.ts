@@ -59,6 +59,8 @@ export interface SolverStats {
   /** 経過時間（ms）。eval は improve の外で呼ばれた evalOrder（refine の種の評価など） */
   ms: { beam: number; improve: number; eval: number };
   calls: { beam: number; improve: number };
+  /** scanArrival() のキャッシュ。lookups = 呼び出し回数、entries = 現在の件数、bytes = 配列の概算メモリ、clears = 上限で捨てた回数 */
+  cache: { lookups: number; hits: number; entries: number; bytes: number; clears: number };
 }
 
 export function createSolver(tt: Timetable, cfg: SolverConfig) {
@@ -153,6 +155,7 @@ const stats: SolverStats = {
   scan: { beam: 0, improve: 0, eval: 0, describe: 0 },
   ms: { beam: 0, improve: 0, eval: 0 },
   calls: { beam: 0, improve: 0 },
+  cache: { lookups: 0, hits: 0, entries: 0, bytes: 0, clears: 0 },
 };
 let phase: keyof SolverStats["scan"] = "eval";
 function scan(src: number, t0: number) {
@@ -206,6 +209,30 @@ function scan(src: number, t0: number) {
     if (r < ready[same]) (ready[same] = r, readyConn[same] = j);
     if (r + XFER_REV < ready[rev]) (ready[rev] = r + XFER_REV, readyConn[rev] = j);
   }
+}
+
+// ---- scan のキャッシュ。arrival（各駅の改札に着ける最早時刻）は src と t0 だけで決まるので使い回す。
+// beam() / evalOrder() は arrival しか使わないのでこちらを呼ぶ。経路の復元（describe / legsTo）は本物の scan() を呼ぶ。
+// 値はすべて秒の整数（または Infinity）なので Float32Array で正確に持てる（2^24 秒 ≒ 194 日まで）。
+// 件数が上限を超えたら丸ごと捨てる（結果は変わらない。Worker あたりの上限メモリ ≒ CACHE_MAX × (N × 4 + 約 100) バイト）
+const CACHE_MAX = 400_000;
+const CACHE_KEY_T = 200_000; // t0 は 0〜約 26 時間（< 200,000 秒）
+const cache = new Map<number, Float32Array>();
+function scanArrival(src: number, t0: number): Float32Array {
+  stats.cache.lookups++;
+  const key = src * CACHE_KEY_T + t0;
+  const hit = Number.isInteger(t0) && t0 >= 0 && t0 < CACHE_KEY_T ? cache.get(key) : undefined;
+  if (hit) {
+    stats.cache.hits++;
+    return hit;
+  }
+  scan(src, t0);
+  const copy = Float32Array.from(arrival);
+  if (Number.isInteger(t0) && t0 >= 0 && t0 < CACHE_KEY_T) {
+    if (cache.size >= CACHE_MAX) (cache.clear(), stats.cache.clears++);
+    cache.set(key, copy);
+  }
+  return copy;
 }
 
 /** 直前の scan の結果から v までの乗車区間（列車ごと）を復元 */
@@ -364,7 +391,7 @@ function beamBody(t0: number, alpha: number): number[] | undefined {
   for (let step = 0; step < T; step++) {
     const next = new Map<string, State>();
     for (const s of layer) {
-      scan(s.at, s.ready);
+      const arrival = scanArrival(s.at, s.ready);
       cand.length = 0;
       for (const v of targets) if (!has(s.a, s.b, s.c, bitOf[v]) && arrival[v] !== Infinity) cand.push(v);
       cand.sort((x, y) => arrival[x] - arrival[y]);
@@ -402,8 +429,7 @@ function evalOrder(order: number[], t0: number, limit = Infinity): number {
 function evalOrderBody(order: number[], t0: number, limit: number): number {
   let at = startSt, ready = t0, arr = t0;
   for (const v of order) {
-    scan(at, ready);
-    arr = arrival[v];
+    arr = scanArrival(at, ready)[v];
     if (arr === Infinity || arr >= limit) return Infinity;
     at = v;
     ready = arr + DWELL_AT[v];
@@ -505,7 +531,11 @@ function describeBody(order: number[], t0: number) {
 }
 
   /** 計測値のコピー（--stats） */
-  const getStats = (): SolverStats => structuredClone(stats);
+  const getStats = (): SolverStats => {
+    stats.cache.entries = cache.size;
+    stats.cache.bytes = cache.size * (N * 4 + 100);
+    return structuredClone(stats);
+  };
   return { tt, N, T, name, sid, startSt, excluded, targets, BEAM, ALPHAS, beam, evalOrder, improve, solve, describe, getStats };
 }
 

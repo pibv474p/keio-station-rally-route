@@ -164,15 +164,20 @@ function printStats(list: SolverStats[]) {
     scan: { beam: 0, improve: 0, eval: 0, describe: 0 },
     ms: { beam: 0, improve: 0, eval: 0 },
     calls: { beam: 0, improve: 0 },
+    cache: { lookups: 0, hits: 0, entries: 0, bytes: 0, clears: 0 },
   };
   const line = (label: string, x: SolverStats) => {
     const total = x.scan.beam + x.scan.improve + x.scan.eval + x.scan.describe;
     return `${label} scan ${n(total)}（beam ${n(x.scan.beam)} / improve ${n(x.scan.improve)} / eval ${n(x.scan.eval)}）` +
-      `  beam ${s(x.ms.beam)}×${x.calls.beam}  improve ${s(x.ms.improve)}×${x.calls.improve}  eval ${s(x.ms.eval)}`;
+      `  beam ${s(x.ms.beam)}×${x.calls.beam}  improve ${s(x.ms.improve)}×${x.calls.improve}  eval ${s(x.ms.eval)}` +
+      (x.cache.lookups
+        ? `  cache 参照 ${n(x.cache.lookups)} ヒット ${((x.cache.hits / x.cache.lookups) * 100).toFixed(1)}% ` +
+          `件数 ${n(x.cache.entries)} 約${(x.cache.bytes / 2 ** 20).toFixed(0)}MB 破棄 ${x.cache.clears}`
+        : "");
   };
   list.forEach((x, i) => {
     console.error(line(`[stats] W${String(i).padStart(2, "0")}`, x));
-    for (const g of ["scan", "ms", "calls"] as const) {
+    for (const g of ["scan", "ms", "calls", "cache"] as const) {
       for (const k of Object.keys(x[g]) as (keyof typeof x[typeof g])[]) (sum[g] as Record<string, number>)[k] += (x[g] as Record<string, number>)[k];
     }
   });
