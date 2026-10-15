@@ -1,15 +1,251 @@
 {
-  "note": "駅からスポットまでの徒歩。walkMin は OSM の歩行経路（routing.openstreetmap.de foot）の距離 ×1.03 ÷ 80m/分 の切り上げ。building は駅ビル・改札内でおおよその値。タグの正確な位置はエキタグアプリで確認する（Google マップでの確認は未了）",
+  "note": "駅からスポットまでの徒歩。walkMin は OSM の歩行経路（routing.openstreetmap.de foot）の距離 ×1.03 ÷ 80m/分 の切り上げ。building は駅ビル・改札内でおおよその値。タグの正確な位置はエキタグアプリで確認する（Google マップでの確認は未了）。open は [開始, 終了]（タグにタッチできる時間、24:30 のように 24 時以降も可）",
   "spots": [
-    { "id": "waters_takeshiba", "name": "ウォーターズ竹芝", "station": "浜松町", "gate": "北口", "lat": 35.65594, "lon": 139.76325, "osmMeters": 713, "walkMin": 10, "hours": "施設の営業時間内", "alt": "新橋（汐留口）から 1,665m・22分" },
-    { "id": "newoman_takanawa", "name": "NEWoMan高輪", "station": "高輪ゲートウェイ", "gate": "改札", "lat": 35.63645, "lon": 139.74009, "osmMeters": 155, "walkMin": 2, "hours": "施設の営業時間内", "memo": "THE LINKPILLAR 1 NORTH 2階に直結。SOUTH 側なら 191m・3分。店内の柱にタグ（ブログ情報）" },
-    { "id": "oimachi_tracks", "name": "大井町TRACKS", "station": "大井町", "gate": "中央改札", "lat": 35.60848, "lon": 139.73289, "osmMeters": 487, "walkMin": 7, "hours": "施設の営業時間内", "memo": "OSM の代表点（敷地の中心）まで。駅側の入口ならもっと近い" },
-    { "id": "pensta_ueno", "name": "ペンスタ エキュート上野店", "station": "上野", "gate": "改札内", "building": true, "walkMin": 2, "hours": "店舗の営業時間内", "memo": "エキュート上野は改札内（改札を出なくてよい）" },
-    { "id": "pensta_shinjuku", "name": "ペンスタ ルミネエスト新宿店", "station": "新宿", "gate": "東口", "lat": 35.69128, "lon": 139.70111, "building": true, "walkMin": 3, "hours": "店舗の営業時間内", "memo": "ブログに「新宿駅のタグ（みどりの窓口）で自動取得」との記述あり。未確認" },
-    { "id": "pensta_sakuragicho", "name": "ペンスタ CIAL桜木町店", "station": "桜木町", "gate": "改札外", "building": true, "walkMin": 2, "hours": "店舗の営業時間内" },
-    { "id": "pensta_omiya", "name": "ペンスタ エキュート大宮ノース店", "station": "大宮", "gate": "改札内", "building": true, "walkMin": 2, "hours": "店舗の営業時間内", "memo": "エキュート大宮ノースは改札内。タグは店の入口付近（ブログ情報）" },
-    { "id": "metropolitan_ikebukuro", "name": "ホテルメトロポリタン（池袋）", "station": "池袋", "gate": "メトロポリタン口", "lat": 35.72834, "lon": 139.708, "osmMeters": 341, "walkMin": 5, "hours": "不明（ホテル1階のタグコーナー）", "alt": "西口から 507m・7分" },
-    { "id": "atre_kichijoji", "name": "アトレ吉祥寺", "station": "吉祥寺", "gate": "中央口", "building": true, "walkMin": 2, "hours": "施設の営業時間内", "memo": "駅ビル内のインフォメーション（ブログ情報）" },
-    { "id": "lumine_machida", "name": "ルミネ町田", "station": "町田", "gate": "中央改札", "building": true, "walkMin": 3, "hours": "施設の営業時間内", "memo": "駅ビル内のインフォメーション（ブログ情報）" }
+    {
+      "id": "waters_takeshiba",
+      "name": "ウォーターズ竹芝",
+      "station": "浜松町",
+      "gate": "北口",
+      "lat": 35.65594,
+      "lon": 139.76325,
+      "osmMeters": 713,
+      "walkMin": 10,
+      "hours": "10:00-22:00",
+      "alt": "新橋（汐留口）から 1,665m・22分",
+      "open": {
+        "weekday": [
+          "10:00",
+          "22:00"
+        ],
+        "holiday": [
+          "10:00",
+          "22:00"
+        ]
+      },
+      "tag": "アトレ竹芝 タワー棟1F 下りエスカレーター横（ユーザー確認）"
+    },
+    {
+      "id": "newoman_takanawa",
+      "name": "NEWoMan高輪",
+      "station": "高輪ゲートウェイ",
+      "gate": "改札",
+      "lat": 35.63645,
+      "lon": 139.74009,
+      "osmMeters": 155,
+      "walkMin": 3,
+      "hours": "平日 10:00-18:00、土日祝 10:00-19:00",
+      "open": {
+        "weekday": [
+          "10:00",
+          "18:00"
+        ],
+        "holiday": [
+          "10:00",
+          "19:00"
+        ]
+      },
+      "tag": "NORTH 1F POSTUDIO 内 注文カウンター前の柱付近（ユーザー確認）",
+      "memo": "駅から NORTH 2階に直結し、1階へ下りる。OSM で NORTH まで 155m"
+    },
+    {
+      "id": "oimachi_tracks",
+      "name": "大井町TRACKS",
+      "station": "大井町",
+      "gate": "トラックス口（ホーム品川方の階段B → 2F、ICカード専用）",
+      "lat": 35.60848,
+      "lon": 139.73289,
+      "osmMeters": 487,
+      "walkMin": 5,
+      "hours": "5:30-24:30",
+      "memo": "京浜東北線ホーム→交通広場の片道。構内図（JR東日本 2026年8月現在）と UR の配置図から推定: ホーム中央→品川方の階段 約100m、上がってトラックス口まで 約60m、交通広場（TRACKS の北東側、建物と重層の1F）まで 約140m・1層下りる。品川方の車両（北行の先頭・南行の最後尾）なら約4分、中央付近の車両なら約5分。Google マップ・現地で要確認",
+      "open": {
+        "weekday": [
+          "05:30",
+          "24:30"
+        ],
+        "holiday": [
+          "05:30",
+          "24:30"
+        ]
+      },
+      "tag": "1F 交通広場（ユーザー確認）",
+      "walkFromPlatformMin": {
+        "northEnd": 4,
+        "middle": 5
+      }
+    },
+    {
+      "id": "pensta_ueno",
+      "name": "ペンスタ エキュート上野店",
+      "station": "上野",
+      "gate": "改札内",
+      "building": true,
+      "walkMin": 2,
+      "hours": "カフェエリア 月〜土 6:30-22:00、日祝 6:30-21:00（エキュート公式）",
+      "memo": "どちらでも取得可（ユーザー確認）。営業時間内は改札内のペンスタ、時間外は中央改札外",
+      "open": {
+        "weekday": [
+          "06:30",
+          "22:00"
+        ],
+        "saturday": [
+          "06:30",
+          "22:00"
+        ],
+        "holiday": [
+          "06:30",
+          "21:00"
+        ]
+      },
+      "tag": "Pensta上野 カフェエリア入口付近（改札内3F）",
+      "tags": [
+        {
+          "where": "Pensta上野 カフェエリア入口付近（改札内3F。ホーム2Fから階段で上がる）",
+          "inside": true,
+          "open": {
+            "weekday": [
+              "06:30",
+              "22:00"
+            ],
+            "saturday": [
+              "06:30",
+              "22:00"
+            ],
+            "holiday": [
+              "06:30",
+              "21:00"
+            ]
+          }
+        },
+        {
+          "where": "上野駅のエキタグ（中央改札外1F）",
+          "inside": false,
+          "open": "始発-終電"
+        }
+      ]
+    },
+    {
+      "id": "pensta_shinjuku",
+      "name": "ペンスタ ルミネエスト新宿店",
+      "station": "新宿",
+      "gate": "東口",
+      "lat": 35.69128,
+      "lon": 139.70111,
+      "building": true,
+      "walkMin": 3,
+      "hours": "下の tags のいずれか",
+      "memo": "いずれでも取得可（ユーザー確認）。新宿駅のタグも同じ場所なので、2 か 3 で新宿駅とペンスタ新宿を同時に取る",
+      "tags": [
+        {
+          "where": "Pensta新宿 店頭ディスプレイ下（ルミネエスト新宿 B1）",
+          "inside": false,
+          "open": {
+            "weekday": [
+              "11:00",
+              "21:00"
+            ],
+            "holiday": [
+              "10:30",
+              "21:00"
+            ]
+          }
+        },
+        {
+          "where": "新宿駅 東改札外 地下みどりの窓口（指定席券売機フロア内）",
+          "inside": false,
+          "open": "始発-23:50（ユーザー確認）"
+        },
+        {
+          "where": "新宿駅 南改札外 南口みどりの窓口",
+          "inside": false,
+          "open": [
+            "06:00",
+            "22:00"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pensta_sakuragicho",
+      "name": "ペンスタ CIAL桜木町店",
+      "station": "桜木町",
+      "gate": "改札外",
+      "building": true,
+      "walkMin": 2,
+      "hours": "10:00-21:00。1階・南口改札外"
+    },
+    {
+      "id": "pensta_omiya",
+      "name": "ペンスタ エキュート大宮ノース店",
+      "station": "大宮",
+      "gate": "改札内",
+      "building": true,
+      "walkMin": 2,
+      "hours": "不明",
+      "memo": "エキュート大宮ノースは改札内。タグは店の入口付近（ブログ情報）"
+    },
+    {
+      "id": "metropolitan_ikebukuro",
+      "name": "ホテルメトロポリタン（池袋）",
+      "station": "池袋",
+      "gate": "メトロポリタン口",
+      "lat": 35.72834,
+      "lon": 139.708,
+      "osmMeters": 341,
+      "walkMin": 5,
+      "hours": "11:00-20:00",
+      "alt": "西口から 507m・7分",
+      "open": {
+        "weekday": [
+          "11:00",
+          "20:00"
+        ],
+        "holiday": [
+          "11:00",
+          "20:00"
+        ]
+      },
+      "tag": "CAKE & BAKERY SHOP 店頭（ユーザー確認）"
+    },
+    {
+      "id": "atre_kichijoji",
+      "name": "アトレ吉祥寺",
+      "station": "吉祥寺",
+      "gate": "中央口",
+      "building": true,
+      "walkMin": 2,
+      "hours": "10:00-21:00",
+      "open": {
+        "weekday": [
+          "10:00",
+          "21:00"
+        ],
+        "holiday": [
+          "10:00",
+          "21:00"
+        ]
+      },
+      "tag": "本館1F インフォメーションカウンター（ユーザー確認）"
+    },
+    {
+      "id": "lumine_machida",
+      "name": "ルミネ町田",
+      "station": "町田",
+      "gate": "中央改札",
+      "building": true,
+      "walkMin": 3,
+      "hours": "10:30-20:30",
+      "open": {
+        "weekday": [
+          "10:30",
+          "20:30"
+        ],
+        "holiday": [
+          "10:30",
+          "20:30"
+        ]
+      },
+      "tag": "1F ルミネサービスカウンター（ユーザー確認）"
+    }
   ]
 }
