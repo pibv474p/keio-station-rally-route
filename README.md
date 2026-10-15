@@ -98,3 +98,12 @@ bash web/replan/build.sh   # out/replan/ に index.html・worker.js・data/{regu
 out/replan/index.html を claude.ai の Artifact として公開し、worker.js と data/*.json を同じ Artifact のファイルとして載せる（capabilities: db）。
 訪問記録は Artifact の db（rally/state）と端末の localStorage に保存する。時刻表データは再配布しないこと（非公開ページで使う）。
 
+
+## JR東日本（Suicaのペンギン デジタルスタンプラリー）
+JR東日本の公式時刻表サイト（timetables.jreast.co.jp）の HTML から、駅時刻表と列車ごとの停車駅一覧を取る。
+```bash
+deno run --allow-net --allow-read --allow-write tools/jreast_fetch.ts config/jreast/suica_penguin.json   # 平日・土休日、約 1,400 ページ・7 分
+```
+- 対象駅と路線は `config/jreast/suica_penguin.json`（路線名の正規表現）。結果は `data/jreast/<id>_<holiday|weekday>.json`
+- 時刻データは交通新聞社「JR時刻表」に基づき、転載・加工しての再配布が禁止されている。個人の範囲で使い、`raw/` `data/` をリポジトリに入れないこと
+- スポットの位置と駅からの徒歩は `config/jreast/suica_penguin_spots.json`

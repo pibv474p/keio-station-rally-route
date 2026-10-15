@@ -1,0 +1,15 @@
+{
+  "note": "駅からスポットまでの徒歩。walkMin は OSM の歩行経路（routing.openstreetmap.de foot）の距離 ×1.03 ÷ 80m/分 の切り上げ。building は駅ビル・改札内でおおよその値。タグの正確な位置はエキタグアプリで確認する（Google マップでの確認は未了）",
+  "spots": [
+    { "id": "waters_takeshiba", "name": "ウォーターズ竹芝", "station": "浜松町", "gate": "北口", "lat": 35.65594, "lon": 139.76325, "osmMeters": 713, "walkMin": 10, "hours": "施設の営業時間内", "alt": "新橋（汐留口）から 1,665m・22分" },
+    { "id": "newoman_takanawa", "name": "NEWoMan高輪", "station": "高輪ゲートウェイ", "gate": "改札", "lat": 35.63645, "lon": 139.74009, "osmMeters": 155, "walkMin": 2, "hours": "施設の営業時間内", "memo": "THE LINKPILLAR 1 NORTH 2階に直結。SOUTH 側なら 191m・3分。店内の柱にタグ（ブログ情報）" },
+    { "id": "oimachi_tracks", "name": "大井町TRACKS", "station": "大井町", "gate": "中央改札", "lat": 35.60848, "lon": 139.73289, "osmMeters": 487, "walkMin": 7, "hours": "施設の営業時間内", "memo": "OSM の代表点（敷地の中心）まで。駅側の入口ならもっと近い" },
+    { "id": "pensta_ueno", "name": "ペンスタ エキュート上野店", "station": "上野", "gate": "改札内", "building": true, "walkMin": 2, "hours": "店舗の営業時間内", "memo": "エキュート上野は改札内（改札を出なくてよい）" },
+    { "id": "pensta_shinjuku", "name": "ペンスタ ルミネエスト新宿店", "station": "新宿", "gate": "東口", "lat": 35.69128, "lon": 139.70111, "building": true, "walkMin": 3, "hours": "店舗の営業時間内", "memo": "ブログに「新宿駅のタグ（みどりの窓口）で自動取得」との記述あり。未確認" },
+    { "id": "pensta_sakuragicho", "name": "ペンスタ CIAL桜木町店", "station": "桜木町", "gate": "改札外", "building": true, "walkMin": 2, "hours": "店舗の営業時間内" },
+    { "id": "pensta_omiya", "name": "ペンスタ エキュート大宮ノース店", "station": "大宮", "gate": "改札内", "building": true, "walkMin": 2, "hours": "店舗の営業時間内", "memo": "エキュート大宮ノースは改札内。タグは店の入口付近（ブログ情報）" },
+    { "id": "metropolitan_ikebukuro", "name": "ホテルメトロポリタン（池袋）", "station": "池袋", "gate": "メトロポリタン口", "lat": 35.72834, "lon": 139.708, "osmMeters": 341, "walkMin": 5, "hours": "不明（ホテル1階のタグコーナー）", "alt": "西口から 507m・7分" },
+    { "id": "atre_kichijoji", "name": "アトレ吉祥寺", "station": "吉祥寺", "gate": "中央口", "building": true, "walkMin": 2, "hours": "施設の営業時間内", "memo": "駅ビル内のインフォメーション（ブログ情報）" },
+    { "id": "lumine_machida", "name": "ルミネ町田", "station": "町田", "gate": "中央改札", "building": true, "walkMin": 3, "hours": "施設の営業時間内", "memo": "駅ビル内のインフォメーション（ブログ情報）" }
+  ]
+}
