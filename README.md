@@ -106,4 +106,5 @@ deno run --allow-net --allow-read --allow-write tools/jreast_fetch.ts config/jre
 ```
 - 対象駅と路線は `config/jreast/suica_penguin.json`（路線名の正規表現）。結果は `data/jreast/<id>_<holiday|weekday>.json`
 - 時刻データは交通新聞社「JR時刻表」に基づき、転載・加工しての再配布が禁止されている。個人の範囲で使い、`raw/` `data/` をリポジトリに入れないこと
-- スポットの位置と駅からの徒歩は `config/jreast/suica_penguin_spots.json`
+- スポットの位置と駅からの徒歩は `config/jreast/suica_penguin_spots.json`、回る順番の探索は `tools/rally_jreast.ts`
+- 経緯・調査結果・次の作業は [docs/handoff_suica_penguin.md](docs/handoff_suica_penguin.md)
